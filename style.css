@@ -237,19 +237,17 @@ section {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
+    flex-direction: column;
+    text-align: center;
 }
 
-.about .content .col-left {
+.about .content .column {
     position: relative;
-    width: 45%;
-}
-
-.about .content .col-right {
-    position: relative;
-    width: 50%;
+    width: 100%;
+    max-width: 800px;
 }
 
 .about .content .col-left .img-card {
@@ -268,14 +266,17 @@ section {
     border-radius: 10px;
 }
 
-.about .content .col-right .content-title {
+/* Center the content title and paragraph */
+.about .content .column .content-title {
     font-size: 2em;
     font-weight: 800;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.about .content .col-right .paragraph-text {
+.about .content .column .paragraph-text {
     font-size: 1em;
+    text-align: center;
 }
 
 /* Skills Section */
@@ -286,28 +287,24 @@ section {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center the content */
     align-items: center;
     color: white;
     margin-top: 20px;
 }
 
-.skills .content .col-left {
-    position: relative;
-    width: 46%;
-}
-
-.skills .content .col-left .content-title {
-    margin-bottom: 20px;
-}
-
 .skills .content .col-right {
     position: relative;
-    width: 46%;
+    width: 100%;
+    /* Take full width */
+    max-width: 80%;
+    /* Limit max width for better design */
 }
 
 .skills .content .col-right .bar {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    /* Slight increase for spacing */
     padding: 10px;
 }
 
@@ -340,29 +337,25 @@ section {
     border-radius: 3px;
 }
 
-.skills .content .col-right .bar .html::before {
-    width: 95%;
-    background-color: #e45126;
-}
-
-.skills .content .col-right .bar .css::before {
-    width: 90%;
-    background-color: #0c73b8;
-}
-
-.skills .content .col-right .bar .javascript::before {
+.skills .content .col-right .bar .cpp::before {
     width: 80%;
-    background-color: #e3a324;
+    background-color: #db380b;
 }
 
 .skills .content .col-right .bar .python::before {
-    width: 85%;
-    background-color: blue;
+    width: 50%;
+    background-color: #235bf6;
+    /* Using a nicer blue */
 }
 
-.skills .content .col-right .bar .php::before {
-    width: 65%;
-    background-color: #6d7eb8;
+.skills .content .col-right .bar .c::before {
+    width: 60%;
+    background-color: #0c73b8;
+}
+
+.skills .content .col-right .bar .mern::before {
+    width: 85%;
+    background-color: #8322c9;
 }
 
 /* Services */
@@ -428,8 +421,6 @@ section {
 
 /* Work */
 
-
-
 .work .content {
     display: flex;
     justify-content: center;
@@ -439,16 +430,20 @@ section {
 }
 
 .work .content .card {
-    width: 340px;
-    margin: 15px;
+    width: 500px;
+    /* Increased width */
+    margin: 25px;
+    /* Increased margin */
 }
 
 .work .content .card .card-img {
     position: relative;
     width: 100%;
-    height: 260px;
+    height: 300px;
+    /* Increased height */
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .work .content .card .card-img img {
@@ -463,7 +458,42 @@ section {
 }
 
 .work .content .card .card-img img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.card-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.work-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #3a6cf4;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.work-btn:hover {
+    background-color: #235bf6;
+    transform: translateY(-3px);
+}
+
+.status-not-live {
+    color: #ccc;
+    padding: 8px 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-weight: 500;
 }
 
 

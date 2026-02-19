@@ -19,9 +19,9 @@ const particlesConfig = {
         },
         modes: {
             grab: {
-                distance: 150,
+                distance: 200,
                 links: {
-                    opacity: 0.5,
+                    opacity: 1,
                 },
             },
         },
@@ -61,15 +61,12 @@ const particlesConfig = {
             type: "circle",
         },
         size: {
-            value: { min: 1, max: 3 },
+            value: { min: 1, max: 4 },
         },
     },
     detectRetina: true,
 };
 
-// Initialize tsParticles
-// Make sure to include the tsparticles script in HTML before this
-// <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
 document.addEventListener('DOMContentLoaded', async () => {
     await tsParticles.load("tsparticles", particlesConfig);

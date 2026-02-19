@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Hashir Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        .details-section {
+            padding: 150px 200px 50px;
+        }
+
+        .details-title h2 {
+            font-size: 3em;
+            color: #3a6cf4;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-card h3 {
+            color: #3a6cf4;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3a6cf4;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .detail-card p,
+        .detail-card ul {
+            color: #eee;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .detail-card ul {
+            list-style-position: inside;
+        }
+
+        @media (max-width: 1040px) {
+            .details-section {
+                padding: 100px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tsparticles"></div>
+
+    <header>
+        <a href="index.html" class="brand">Hashir</a>
+        <div class="navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="details-section">
+        <div class="details-title" data-aos="fade-down">
+            <h2 id="project-title">Project Details</h2>
+            <p id="project-desc">Comprehensive overview of the project architecture and design.</p>
+        </div>
+
+        <div class="details-grid">
+            <!-- Structure -->
+            <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Structure</h3>
+                <p id="project-structure">Loading...</p>
+            </div>
+
+            <!-- Technology -->
+            <div class="detail-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Technology Stack</h3>
+                <ul id="project-tech">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+
+            <!-- Language -->
+            <div class="detail-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Languages</h3>
+                <p id="project-lang">Loading...</p>
+            </div>
+
+            <!-- Design -->
+            <div class="detail-card" data-aos="fade-up" data-aos-delay="400">
+                <h3>Design</h3>
+                <div id="project-design">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a href="index.html#work" class="btn">Back to Projects</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span class="footer-title">Hashir Farooq</span>
+        <p>Copyright @2026 <a href="#">Hashir Farooq</a>. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        const projects = {
+            "ecom": {
+                title: "E-Commerce Theme",
+                desc: "A modern, fully functional e-commerce website theme designed for scalability and user experience.",
+                structure: "The project follows a modular component-based structure. Key modules include Authentication, User Dashboard, Product Management, and Order Processing.",
+                tech: ["React.js / Next.js", "Node.js / Express", "MongoDB", "Redux Toolkit"],
+                lang: "Primary development in **JavaScript (ES6+)**. Python used for backend analytics scripts.",
+                design: `<ul>
+                            <li>Responsive Mobile-First Layout</li>
+                            <li>Dark/Light Mode Support</li>
+                            <li>Intuitive Navigation Flows</li>
+                        </ul>`
+            },
+            "whatsapp-ai": {
+                title: "WhatsApp AI Bridge",
+                desc: "An intelligent bridge connecting WhatsApp with advanced AI models for automated responses.",
+                structure: "Built using a microservices architecture. The core bridge service handles message interception and routing to the AI engine.",
+                tech: ["Node.js", "WhatsApp Web.js", "OpenAI API", "Docker"],
+                lang: "Written primarily in **TypeScript** for type safety and **Python** for AI model interfacing.",
+                design: `<p>The design focuses on invisibility and reliability, running as a background service with a minimal CLI dashboard for monitoring.</p>`
+            },
+            "project3": {
+                title: "Portfolio Project 3",
+                desc: "Description for the third project goes here.",
+                structure: "Architecture details for project 3.",
+                tech: ["Tech A", "Tech B", "Tech C"],
+                lang: "Languages key to this project.",
+                design: `<p>Design philosophy and UI/UX approach.</p>`
+            }
+        };
+
+        function loadProject() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            const project = projects[projectId];
+
+            if (project) {
+                document.getElementById('project-title').innerText = project.title;
+                document.getElementById('project-desc').innerText = project.desc;
+                document.getElementById('project-structure').innerText = project.structure;
+
+                // Tech Stack
+                const techList = document.getElementById('project-tech');
+                techList.innerHTML = "";
+                project.tech.forEach(tech => {
+                    const li = document.createElement('li');
+                    li.innerText = tech;
+                    techList.appendChild(li);
+                });
+
+                document.getElementById('project-lang').innerHTML = project.lang;
+                document.getElementById('project-design').innerHTML = project.design;
+            } else {
+                document.getElementById('project-title').innerText = "Project Details";
+                document.getElementById('project-desc').innerText = "Select a project to view details.";
+                document.getElementById('project-structure').innerText = "No project selected.";
+                document.getElementById('project-tech').innerHTML = "";
+                document.getElementById('project-lang').innerText = "";
+                document.getElementById('project-design').innerHTML = "";
+            }
+        }
+
+        window.onload = loadProject;
+    </script>
+</body>
+
+</html>
