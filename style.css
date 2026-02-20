@@ -63,14 +63,19 @@ header .navigation a {
     text-decoration: none;
     font-weight: 500;
     margin-left: 30px;
+    transition: 0.3s ease;
+    /* I added this so the color fades smoothly! */
 }
 
+/* 1. When the header is transparent (at the top), hovering turns text blue */
 header .navigation a:hover {
     color: #3a6cf4;
 }
 
-header .sticky .navigation a:hover {
-    color: black;
+/* 2. THE FIX: When the header is sticky (blue), hovering turns text dark navy */
+/* (Notice there is NO space between header and .sticky) */
+header.sticky .navigation a:hover {
+    color: #000016;
 }
 
 section {
@@ -114,7 +119,7 @@ section {
     width: 100%;
     object-fit: contain;
     /* Clean style for transparent image */
-    animation: floatImage 4s ease-in-out infinite;
+    animation: floatImage 3s ease-in-out infinite;
 }
 
 @keyframes floatImage {
@@ -170,7 +175,7 @@ section {
 }
 
 .animated-text h3:nth-child(1) {
-    animation: text-move 6s infinite ease-out;
+    animation: text-move 3.5s infinite ease-out;
 }
 
 @keyframes text-move {
@@ -429,7 +434,15 @@ section {
 }
 
 .services .content .card {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    /* The frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border */
+    color: white;
+    /* Make text white to contrast the dark background */
     width: 340px;
     margin: 10px;
     padding: 25px;
@@ -438,7 +451,7 @@ section {
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(1 1 1/15%);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     transition: 0.3s linear;
 }
 
@@ -451,6 +464,7 @@ section {
 
 .services .content .card .info {
     text-align: center;
+    color: #ccc;
 }
 
 .services .content .card .info h3 {
@@ -829,4 +843,22 @@ section {
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000016;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a6cf4;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #235bf6;
 }

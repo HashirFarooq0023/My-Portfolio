@@ -23,7 +23,7 @@
             <a href="#skills" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Skills</a>
             <a href="#services" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Services</a>
             <a href="#work" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Work</a>
-            <a href="#" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">Contact</a>
+            <a href="#contact" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">Contact</a>
         </div>
     </header>
 
@@ -229,7 +229,9 @@
         </div>
         <div class="content">
             <div class="row">
-                <div class="card reveal">
+
+                <a href="https://maps.google.com/?q=Lahore,Pakistan" target="_blank" class="card reveal"
+                    style="text-decoration: none;">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
@@ -237,8 +239,9 @@
                         <h3>Address</h3>
                         <span>Pakistan/Lahore</span>
                     </div>
-                </div>
-                <div class="card reveal">
+                </a>
+
+                <a href="tel:+923081505859" class="card reveal" style="text-decoration: none;">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
@@ -246,8 +249,9 @@
                         <h3>Phone</h3>
                         <span>03081505859</span>
                     </div>
-                </div>
-                <div class="card reveal">
+                </a>
+
+                <a href="mailto:hashirfarooq48@gmail.com" class="card reveal" style="text-decoration: none;">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -255,8 +259,9 @@
                         <h3>Email Address</h3>
                         <span>hashirfarooq48@gmail.com</span>
                     </div>
-                </div>
-                <div class="card reveal">
+                </a>
+
+                <a href="https://notactice.com" target="_blank" class="card reveal" style="text-decoration: none;">
                     <div class="contact-icon">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -264,14 +269,14 @@
                         <h3>Website</h3>
                         <span>notactice.com</span>
                     </div>
-                </div>
-            </div>
+                </a>
 
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <span class="footer-title">Hashir Farooq</span>
+
         <p>Copyright @2026 <a href="#">Hashir Farooq</a>. All Rights Reserved.</p>
     </footer>
 
@@ -286,12 +291,6 @@
             scrollBtn.classList.toggle("active", window.scrollY > 500);
         });
 
-        //javascript for scroll back to top on click scroll-to-top button
-
-        // document.querySelector(".scrollToTop-btn").addEventListener("click", () => {
-        //   document.body.scrollTop = 0;
-        //   document.documentElement.scrollTop = 0;
-        // });
 
         const menuBtn = document.querySelector(".menu-btn");
         const navigation = document.querySelector(".navigation");
