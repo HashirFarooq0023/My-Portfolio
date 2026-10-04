@@ -3,7 +3,7 @@ import { EDUCATION_DATA } from '../data/portfolioData';
 
 export const EducationSection: React.FC = () => {
   return (
-    <section id="education" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section id="education" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <span className="section-number">02 / EDUCATION</span>
 
       <div className="mt-8">

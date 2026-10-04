@@ -395,13 +395,21 @@
   opacity: 0.35;
 }
 
-/* Unboxed Bare Typography Numbers (Anti-AI Rule #1) */
+/* Unboxed Bare Typography Numbers (Anti-AI Rule #1 & #5) */
 .section-number {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.875rem;
-  letter-spacing: 0.2em;
-  color: #777777;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.22em;
+  color: #FFFFFF;
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .section-number {
+    font-size: 1.125rem;
+  }
 }

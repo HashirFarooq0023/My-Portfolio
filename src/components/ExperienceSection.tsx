@@ -5,7 +5,7 @@ import { LiquidGlassButton } from './ui/LiquidGlassButton';
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section id="experience" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <span className="section-number">04 / EXPERIENCE</span>
 
       <div className="mt-8 space-y-6">

@@ -8,7 +8,7 @@ export const CertificationsSection: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
 
   return (
-    <section id="certifications" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section id="certifications" className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <span className="section-number">03 / CERTIFICATIONS</span>
 
       <div className="mt-8 space-y-6">

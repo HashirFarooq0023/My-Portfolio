@@ -12,13 +12,13 @@ export const MegaTrixSection: React.FC<MegaTrixSectionProps> = ({
   onNavigateToProject
 }) => {
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section className="py-20 sm:py-28 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <div className="mb-12">
         <span className="section-number">SOFTWARE ECOSYSTEM</span>
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
           MegaTrix
         </h2>
-        <p className="text-base sm:text-xl text-[#AAAAAA] max-w-3xl leading-relaxed">
+        <p className="text-base sm:text-xl text-[#AAAAAA] max-w-4xl leading-relaxed">
           A growing software ecosystem focused on building practical software products across education, business management, e-commerce, and automation.
         </p>
       </div>

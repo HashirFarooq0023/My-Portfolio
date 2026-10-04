@@ -1,42 +1,64 @@
-export interface ProjectDetail {
-  id: string;
+export interface ProjectTechStackGroup {
+  category: string;
+  technologies: string[];
+}
+
+export interface ProjectHowHandledItem {
   number: string;
   title: string;
-  subtitle: string;
-  category: 'collaborative' | 'university' | 'self';
-  categoryLabel: string;
-  badge?: string;
-  period?: string;
-  courseContext?: string;
   description: string;
-  technologies: string[];
+}
+
+export interface ProjectArchitectureLayer {
+  name: string;
+  tech: string;
+  description?: string;
+}
+
+export interface ProjectArchitecture {
+  layers: ProjectArchitectureLayer[];
+}
+
+export interface ProjectFeatureItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface ProjectChallengeItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface ProjectLinks {
+  live?: string;
+  github?: string;
+  video?: string;
+  writeup?: string;
+}
+
+export interface ProjectDetail {
+  slug: string;
+  title: string;
+  subtitle: string;
+  tag?: string;
+  category: 'collaborative' | 'university' | 'self' | 'ai' | 'automation' | 'fullstack';
+  categoryLabel: string;
+  status: string;
+  shortDescription: string;
+  overview: string;
   coverImage: string;
-  gallery: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  whatIBuilt?: string[];
-  highlights?: string[];
-  problem: {
-    headline: string;
-    description: string;
-    points: string[];
-  };
-  solution: {
-    headline: string;
-    description: string;
-    points: string[];
-  };
-  howWeHandledIt: {
-    headline: string;
-    description: string;
-    steps: {
-      title: string;
-      detail: string;
-    }[];
-  };
-  keyFeatures: string[];
-  systemArchitecture?: string[];
-  results?: string[];
+  gallery?: string[];
+  problem: string;
+  solution: string;
+  howHandled: ProjectHowHandledItem[];
+  architecture?: ProjectArchitecture;
+  features: ProjectFeatureItem[];
+  challenges: ProjectChallengeItem[];
+  techStack: ProjectTechStackGroup[];
+  links?: ProjectLinks;
+  nextProjectSlug?: string;
 }
 
 export interface ExperienceItem {
@@ -56,10 +78,17 @@ export interface EducationItem {
 }
 
 export interface CertificationItem {
+  id?: string;
   title: string;
   issuer: string;
   date: string;
   description: string;
   verifyUrl?: string;
   credentialId?: string;
+  image?: string;
+}
+
+export interface TechnicalCapabilityGroup {
+  category: string;
+  skills: string[];
 }

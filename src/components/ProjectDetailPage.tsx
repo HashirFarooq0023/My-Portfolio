@@ -39,7 +39,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
   const nextProject = ALL_PROJECTS.find(p => p.slug === project.nextProjectSlug) || ALL_PROJECTS[0];
 
   return (
-    <article className="min-h-screen bg-black text-[#F5F5F5] antialiased pt-24 sm:pt-28 pb-28 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto selection:bg-white selection:text-black">
+    <article className="min-h-screen bg-black text-[#F5F5F5] antialiased pt-24 sm:pt-28 pb-28 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto selection:bg-white selection:text-black">
       {/* 1. Glass Top Navigation Bar */}
       <div className="flex items-center justify-between gap-4 mb-10 sm:mb-14">
         <LiquidGlassButton
@@ -73,7 +73,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
           {project.title}
         </h1>
 
-        <p className="text-lg sm:text-2xl text-[#C0C0C0] font-light max-w-3xl leading-relaxed mb-6">
+        <p className="text-lg sm:text-2xl text-[#C0C0C0] font-light max-w-4xl leading-relaxed mb-6">
           {project.subtitle}
         </p>
 
@@ -140,7 +140,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
       {/* 4. Overview Section */}
       <section className="mb-16 sm:mb-20">
         <span className="section-number">OVERVIEW</span>
-        <p className="text-base sm:text-xl text-[#D0D0D0] leading-relaxed max-w-3xl">
+        <p className="text-base sm:text-xl text-[#D0D0D0] leading-relaxed max-w-4xl">
           {project.overview}
         </p>
       </section>
@@ -231,7 +231,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                   )}
                 </LiquidGlassSurface>
 
-                {index < project.architecture.layers.length - 1 && (
+                {project.architecture && index < project.architecture.layers.length - 1 && (
                   <div className="flex justify-center py-1">
                     <span className="text-xs font-mono text-[#555555]">↓</span>
                   </div>

@@ -9,9 +9,9 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onNavigateSection }) => {
   return (
-    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center pt-32 sm:pt-40 pb-20 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto overflow-hidden">
+    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center pt-32 sm:pt-40 pb-20 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Atmospheric Background Glow for Glass Translucency */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[450px] pointer-events-none bg-subtle-glow -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[450px] pointer-events-none bg-subtle-glow -z-10" />
 
       {/* Profile & Name Identification */}
       <div className="flex items-center gap-4 sm:gap-5 mb-8">
@@ -34,12 +34,12 @@ export const Hero: React.FC<HeroProps> = ({ onNavigateSection }) => {
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-[0.95] max-w-4xl">
+      <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-[0.95] max-w-5xl">
         Building software that solves real problems.
       </h1>
 
       {/* Concise Professional Summary */}
-      <p className="text-lg sm:text-2xl text-[#C0C0C0] font-light leading-relaxed max-w-3xl mb-10">
+      <p className="text-lg sm:text-2xl text-[#C0C0C0] font-light leading-relaxed max-w-4xl mb-10">
         {PERSONAL_INFO.heroSummary}
       </p>
 

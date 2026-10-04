@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           ref={navRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className={`pointer-events-auto relative w-full max-w-3xl rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-500 overflow-hidden ${
+          className={`pointer-events-auto relative w-full max-w-5xl rounded-full px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-500 overflow-hidden ${
             scrolled ? 'real-glass-navbar-scrolled' : 'real-glass-navbar'
           }`}
         >

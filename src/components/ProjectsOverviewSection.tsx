@@ -89,14 +89,14 @@ export const ProjectsOverviewSection: React.FC<ProjectsOverviewSectionProps> = (
   );
 
   return (
-    <section id="projects" className="py-20 sm:py-32 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section id="projects" className="py-20 sm:py-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <span className="section-number">05 / PROJECTS</span>
 
       <div className="mb-14">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
           Software Products &amp; Engineering Systems
         </h2>
-        <p className="text-base sm:text-xl text-[#AAAAAA] max-w-2xl leading-relaxed">
+        <p className="text-base sm:text-xl text-[#AAAAAA] max-w-3xl leading-relaxed">
           Every project below is an end-to-end engineered system built to solve specific operational, algorithmic, or business requirements.
         </p>
       </div>

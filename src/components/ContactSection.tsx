@@ -13,7 +13,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-36 px-4 sm:px-6 md:px-8 max-w-5xl mx-auto border-t border-white/10">
+    <section id="contact" className="py-24 sm:py-36 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto border-t border-white/10">
       <span className="section-number">GET IN TOUCH</span>
 
       <div className="mb-12">
@@ -22,7 +22,7 @@ export const ContactSection: React.FC = () => {
           SOMETHING USEFUL.
         </h2>
 
-        <p className="text-base sm:text-xl text-[#A0A0A0] max-w-2xl leading-relaxed">
+        <p className="text-base sm:text-xl text-[#A0A0A0] max-w-3xl leading-relaxed">
           Open to software engineering roles, technical internships, AI integrations, and full-stack product collaborations.
         </p>
       </div>
