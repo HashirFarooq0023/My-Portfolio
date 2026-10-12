@@ -10,15 +10,12 @@ interface BandProps {
 function Band({ className, track, dot }: BandProps) {
   const phrases = [...hero.band, ...hero.band];
   return (
-    <div className={cn("absolute inset-x-[-5%] overflow-hidden py-5 md:py-6", className)}>
+    <div className={cn("absolute inset-x-[-5%] overflow-hidden py-3 md:py-4", className)}>
       <div className={cn("flex w-max items-center whitespace-nowrap motion-reduce:animate-none", track)}>
         {phrases.map((p, i) => (
-          <span
-            key={`${p}-${i}`}
-            className="flex items-center gap-8 pr-8 font-sans font-condensed text-3xl font-extrabold uppercase md:gap-12 md:pr-12 md:text-5xl"
-          >
+          <span key={`${p}-${i}`} className="flex items-center gap-6 pr-6 font-sans text-xl font-extrabold tracking-tight md:gap-10 md:pr-10 md:text-3xl">
             {p}
-            <span className={cn("size-2.5 rotate-45 md:size-3", dot)} />
+            <span className={cn("size-2 rounded-full md:size-2.5", dot)} />
           </span>
         ))}
       </div>
@@ -26,11 +23,11 @@ function Band({ className, track, dot }: BandProps) {
   );
 }
 
-// Two crossing marquee bands: the Visor Band, recast as a section divider.
+// Two crossing marquee bands: the Visor Band, closing the hero.
 export function VisorBand() {
   return (
-    <div aria-hidden="true" className="relative h-44 overflow-hidden md:h-60">
-      <Band className="top-1/2 -translate-y-1/2 rotate-[2.5deg] bg-volt text-ink" track="animate-marquee-reverse" dot="bg-ink" />
+    <div aria-hidden="true" className="relative h-28 shrink-0 overflow-hidden md:h-36">
+      <Band className="top-1/2 -translate-y-1/2 rotate-2 bg-volt text-ink" track="animate-marquee-reverse" dot="bg-ink" />
       <Band className="top-1/2 -translate-y-1/2 -rotate-2 bg-ink text-volt" track="animate-marquee" dot="bg-volt" />
     </div>
   );

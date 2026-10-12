@@ -32,8 +32,8 @@ export interface HeroContent {
 
 export interface AboutSectionContent extends SectionMeta {
   statement: string;
-  image: ImageAsset;
   skillsTitle: string;
+  skillsHint: string;
   skillLabels: Record<keyof AboutSkills, string>;
 }
 
@@ -46,28 +46,42 @@ export interface Service {
   stack: string;
 }
 
-export interface ProcessStep { title: string; body: string }
-
 export interface ServicesContent extends SectionMeta {
   deliverablesLabel: string;
   timelineLabel: string;
   stackLabel: string;
   items: readonly Service[];
-  processTitle: string;
-  process: readonly ProcessStep[];
+}
+
+export interface ProcessStep { title: string; when: string; body: string }
+
+export interface ProcessContent extends SectionMeta {
+  steps: readonly ProcessStep[];
 }
 
 export interface WorkFilter { id: string; label: string; categories: readonly ProjectCategory[] }
 
-export interface WorkContent extends SectionMeta {
+export interface ProjectsSectionContent extends SectionMeta {
   filtersLabel: string;
   filters: readonly WorkFilter[];
   typeLabels: Record<ProjectCategory, string>;
   featuredLabel: string;
   openLabel: string;
+  newTabHint: string;
   liveLabel: string;
   codeLabel: string;
   allProjects: string;
+}
+
+export interface ProjectDetailContent {
+  back: LinkItem;
+  metaTitle: string;
+  roleLabel: string;
+  stackLabel: string;
+  linksLabel: string;
+  featuresTitle: string;
+  galleryTitle: string;
+  nextLabel: string;
 }
 
 export interface ContactContent extends SectionMeta {

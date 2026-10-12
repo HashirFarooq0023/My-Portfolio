@@ -41,7 +41,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <div aria-hidden="true" className="mt-24 select-none overflow-hidden whitespace-nowrap px-2 text-center text-[15.5vw] leading-[0.78] text-footer-line">
+      <div aria-hidden="true" className="mt-24 select-none overflow-hidden whitespace-nowrap px-2 text-center text-[12.5vw] leading-[0.78] text-footer-line">
         <RevealText text={`${site.wordmark.serif} ${site.wordmark.sans}`} className="font-extrabold tracking-[-0.06em]" stagger={0.04} />
       </div>
 

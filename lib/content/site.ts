@@ -3,28 +3,30 @@ import type {
   ContactContent,
   FooterContent,
   HeroContent,
+  ProjectDetailContent,
+  ProjectsSectionContent,
   SiteContent,
-  WorkContent,
 } from "./types";
 import { aboutContent } from "./about";
 import portrait from "./images/2.jpeg";
-import aboutImage from "./images/1.jpeg";
 
 export const site = {
   lang: "en",
   metadata: {
-    title: `${aboutContent.name} — ${aboutContent.title}`,
-    description: aboutContent.tagline,
+    title: `${aboutContent.name} | ${aboutContent.title}`,
+    description:
+      "AI engineer and full-stack developer in Pakistan. I build AI agents, RAG pipelines and fast Next.js web apps for teams that want to ship.",
   },
-  wordmark: { serif: "Ahmed", sans: "Javed" },
+  wordmark: { serif: "M. Ahmed", sans: "Javed" },
   skipLink: "Skip to content",
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Contact", href: "#contact" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Services", href: "/#services" },
+    { label: "About", href: "/#about" },
+    { label: "Work", href: "/#work" },
+    { label: "Contact", href: "/#contact" },
   ],
-  bookCall: { label: "Book a call", href: "#contact" },
+  bookCall: { label: "Book a call", href: "/#contact" },
   menu: { open: "Open menu", close: "Close menu" },
   social: { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram" },
 } as const satisfies SiteContent;
@@ -37,19 +39,49 @@ export const hero = {
   },
   name: { serif: "Ahmed", sans: "Javed" },
   lead: "I design and build AI systems and web apps that save your team hours every week.",
-  secondaryCta: { label: "See my work", href: "#work" },
-  scroll: { label: "Scroll to about", href: "#about" },
-  band: ["RAG pipelines", "AI agents", "Next.js apps", "MCP servers", "FastAPI backends", "LLM evals"],
+  secondaryCta: { label: "See my work", href: "#projects" },
+  scroll: { label: "Scroll to projects", href: "#projects" },
+  band: ["Agentic AI Systems", "RAG Pipeline", "AI Automation", "Next js apps", "Full stack development"],
   portrait: { src: portrait, alt: "Portrait of Ahmed Javed with arms crossed, standing by a brick and tile pillar" },
 } as const satisfies HeroContent;
 
-export const aboutSection = {
+export const projectsSection = {
   index: "01",
+  label: "Projects",
+  headline: { serif: "Recent work.", sans: "Shipped, not just sketched." },
+  filtersLabel: "Filter projects",
+  filters: [
+    { id: "all", label: "All", categories: ["ai", "fullstack", "frontend"] },
+    { id: "ai", label: "AI systems", categories: ["ai"] },
+    { id: "fullstack", label: "Full stack & web", categories: ["fullstack", "frontend"] },
+  ],
+  typeLabels: { ai: "AI system", fullstack: "Web app", frontend: "Website" },
+  featuredLabel: "Featured",
+  openLabel: "View project details:",
+  newTabHint: "(opens in a new tab)",
+  liveLabel: "Live site",
+  codeLabel: "Code",
+  allProjects: "All projects on GitHub",
+} as const satisfies ProjectsSectionContent;
+
+export const projectDetail = {
+  back: { label: "All projects", href: "/#projects" },
+  metaTitle: "Case study",
+  roleLabel: "Role",
+  stackLabel: "Stack",
+  linksLabel: "Links",
+  featuresTitle: "What I built",
+  galleryTitle: "Screens",
+  nextLabel: "Next project",
+} as const satisfies ProjectDetailContent;
+
+export const aboutSection = {
+  index: "03",
   label: "About",
   headline: { serif: "Engineer first.", sans: "Builder by habit." },
   statement: aboutContent.tagline,
-  image: { src: aboutImage, alt: "Ahmed Javed in a white kurta leaning on a brick wall outdoors" },
   skillsTitle: "Toolkit",
+  skillsHint: "The tools I reach for every week.",
   skillLabels: {
     languages: "Languages",
     frontend: "Frontend",
@@ -60,31 +92,13 @@ export const aboutSection = {
   },
 } as const satisfies AboutSectionContent;
 
-export const work = {
-  index: "03",
-  label: "Work",
-  headline: { serif: "Recent work.", sans: "Shipped, not just sketched." },
-  filtersLabel: "Filter projects",
-  filters: [
-    { id: "all", label: "All", categories: ["ai", "fullstack", "frontend"] },
-    { id: "ai", label: "AI systems", categories: ["ai"] },
-    { id: "fullstack", label: "Full stack & web", categories: ["fullstack", "frontend"] },
-  ],
-  typeLabels: { ai: "AI system", fullstack: "Web app", frontend: "Website" },
-  featuredLabel: "Featured",
-  openLabel: "Open project:",
-  liveLabel: "Live site",
-  codeLabel: "Code",
-  allProjects: "All projects on GitHub",
-} as const satisfies WorkContent;
-
 export const contact = {
-  index: "04",
+  index: "05",
   label: "Contact",
-  headline: { serif: "Let's talk about your project.", sans: "Book a free 30-minute call." },
+  headline: { serif: "Got a project in mind?", sans: "Book a free 30-minute call." },
   calendarTitle: "Pick a time",
   whatsappLabel: "WhatsApp",
-  whatsappText: "Hi Ahmed, I saw your portfolio and I'd like to discuss a project.",
+  whatsappText: "Hi Ahmed, I saw your portfolio and I'd like to talk about a project.",
   emailLabel: "Email",
   emailSubject: "Project inquiry",
   mailFallback: "or use your mail app",

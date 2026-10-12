@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { site } from "@/lib/content/site";
 import { ease } from "@/lib/motion";
@@ -14,16 +15,11 @@ const focusRing = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-
 export function Header() {
   const reduce = useReducedMotion();
   const { scrollY, scrollYProgress } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
-  useMotionValueEvent(scrollY, "change", (v) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setHidden(v > prev && v > 240);
-    setScrolled(v > 24);
-  });
+  useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 24));
 
   useEffect(() => {
     if (!open) return;
@@ -40,20 +36,23 @@ export function Header() {
     <>
       <motion.div
         aria-hidden="true"
-        className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-ink"
+        className="fixed inset-x-0 top-0 z-110 h-0.5 origin-left bg-ink"
         style={{ scaleX: scrollYProgress }}
       />
       <motion.header
-        className="fixed inset-x-0 top-0 z-50"
+        className={cn(
+          "fixed inset-x-0 top-0 z-100 transition-[background-color,border-color,backdrop-filter] duration-500",
+          scrolled && !open ? "border-b border-contour/70 bg-chalk/75 backdrop-blur-md" : "border-b border-transparent",
+        )}
         initial={reduce ? false : { y: -40, opacity: 0 }}
-        animate={{ y: hidden && !open ? "-110%" : 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: ease.snap }}
       >
-        <Container className="flex h-20 items-center justify-between gap-6 md:h-24">
-          <a href="#top" className={cn("relative z-50 flex items-baseline gap-1.5 text-2xl leading-none", open && "text-chalk", focusRing)}>
+        <Container className="flex h-18 items-center justify-between gap-6 md:h-20">
+          <Link href="/#top" className={cn("relative z-50 flex items-baseline gap-1.5 text-2xl leading-none", open && "text-chalk", focusRing)}>
             <span className="font-serif">{site.wordmark.serif}</span>
             <span className="font-extrabold tracking-tight">{site.wordmark.sans}</span>
-          </a>
+          </Link>
 
           <nav
             onMouseLeave={() => setHovered(null)}
@@ -116,7 +115,7 @@ export function Header() {
         {open && (
           <motion.div
             id="menu-overlay"
-            className="fixed inset-0 z-40 flex flex-col justify-between bg-ink pb-10 pt-32 text-chalk md:hidden"
+            className="fixed inset-0 z-90 flex flex-col justify-between bg-ink pb-10 pt-32 text-chalk md:hidden"
             initial={{ clipPath: "circle(0% at 100% 0%)" }}
             animate={{ clipPath: "circle(150% at 100% 0%)" }}
             exit={{ clipPath: "circle(0% at 100% 0%)" }}

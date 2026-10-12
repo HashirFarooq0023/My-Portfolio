@@ -11,7 +11,7 @@ export function HeroPortrait() {
 
   return (
     <motion.span
-      className="relative inline-block h-[0.74em] w-[1.25em] shrink-0 overflow-hidden rounded-full bg-fog sm:w-[1.7em]"
+      className="relative inline-block h-[0.8em] w-[1.4em] shrink-0 overflow-hidden rounded-full bg-fog sm:w-[1.95em]"
       initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 50% 0 50% round 999px)" }}
       animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0% 0 0% round 999px)" }}
       transition={{ duration: 1.1, ease: ease.snap, delay: 0.55 }}

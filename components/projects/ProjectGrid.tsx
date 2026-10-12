@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { projects } from "@/lib/content/projects";
-import { work } from "@/lib/content/site";
+import { projectsSection as work } from "@/lib/content/site";
 import type { ProjectCategory } from "@/lib/content/types";
 import { cn } from "@/lib/cn";
 import { ProjectCard } from "./ProjectCard";
