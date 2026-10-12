@@ -37,14 +37,12 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <div className="flex flex-1 items-center py-6 md:py-8">
-          <h1 className="w-full">
-            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
-            <span className="text-hero-sans max-sm:text-[19vw] mt-[0.02em] flex items-center justify-end gap-[0.12em]">
-              <HeroPortrait />
-              <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />
-            </span>
+        <div className="flex flex-1 items-center justify-between gap-3 py-5 md:gap-8 md:py-6">
+          <h1>
+            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif" />
+            <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} className="text-hero-sans mt-[0.02em]" />
           </h1>
+          <HeroPortrait />
         </div>
 
         <div className="grid grid-cols-12 items-center gap-x-6 gap-y-5 border-t border-contour pt-5">

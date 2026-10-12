@@ -43,7 +43,7 @@ export const aboutContent: AboutContent = {
   skills: {
     languages: ["Python", "TypeScript"],
     frontend: ["Next.js (App Router)", "React.js", "Tailwind CSS"],
-    backend: ["FastAPI", "Node.js", "PostgreSQL", "SQLAlchemy", "Alembic"],
+    backend: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic"],
     ai_data: ["LangChain", "LangGraph", "n8n"],
     vector_search: ["Pinecone", "ChromaDB"],
     devops_tools: ["Git/GitHub", "Docker", "Vercel", "Render", "Hostinger", "uv", "Claude Code CLI"],

@@ -29,7 +29,7 @@ export function Button({ href, children, variant = "primary", icon = "arrowUpRig
       <a
         href={href}
         className={cn(
-          "group relative isolate inline-flex items-center overflow-hidden rounded-full font-sans font-condensed font-extrabold uppercase tracking-[0.02em]",
+          "group relative isolate inline-flex items-center overflow-hidden whitespace-nowrap rounded-full font-sans font-condensed font-extrabold uppercase tracking-[0.02em]",
           "transition-colors duration-500 ease-snap focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink active:scale-[0.97]",
           size === "md" ? "min-h-14 gap-4 py-2 pl-7 pr-2 text-[1.0625rem]" : "min-h-12 gap-3 py-1.5 pl-5 pr-1.5 text-[0.9375rem]",
           v.root,

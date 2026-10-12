@@ -5,22 +5,23 @@ import { motion, useReducedMotion } from "motion/react";
 import { hero } from "@/lib/content/site";
 import { ease } from "@/lib/motion";
 
-// Pill-shaped portrait that opens from its center, set inline with the surname.
+// Portrait card sized in em of the serif display size so it always spans exactly the two
+// name lines (0.8em serif line + 0.82 × 0.79em sans line), at the photo's own 651:780 ratio.
 export function HeroPortrait() {
   const reduce = useReducedMotion();
 
   return (
-    <motion.span
-      className="relative inline-block h-[1.12em] w-[1.55em] shrink-0 overflow-hidden rounded-full bg-fog sm:w-[2.5em]"
-      initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 50% 0 50% round 999px)" }}
-      animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0% 0 0% round 999px)" }}
-      transition={{ duration: 1.1, ease: ease.snap, delay: 0.55 }}
+    <motion.div
+      className="text-hero-serif relative h-[1.46em] w-[1.22em] shrink-0 overflow-hidden rounded-[0.14em] bg-fog"
+      initial={reduce ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0% round 0.14em)" }}
+      animate={reduce ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0% round 0.14em)" }}
+      transition={{ duration: 1.1, ease: ease.snap, delay: 0.5 }}
     >
-      <motion.span
-        className="absolute inset-0 block"
-        initial={reduce ? false : { scale: 1.35 }}
+      <motion.div
+        className="absolute inset-0"
+        initial={reduce ? false : { scale: 1.2 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.6, ease: ease.snap, delay: 0.55 }}
+        transition={{ duration: 1.6, ease: ease.snap, delay: 0.5 }}
       >
         <Image
           src={hero.portrait.src}
@@ -28,10 +29,10 @@ export function HeroPortrait() {
           fill
           priority
           placeholder="blur"
-          sizes="(min-width: 1024px) 28vw, 40vw"
-          className="object-cover object-[50%_30%]"
+          sizes="(min-width: 1024px) 22vw, 30vw"
+          className="object-cover"
         />
-      </motion.span>
-    </motion.span>
+      </motion.div>
+    </motion.div>
   );
 }

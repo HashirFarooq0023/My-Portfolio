@@ -49,7 +49,7 @@ export function Header() {
         transition={{ duration: 0.6, ease: ease.snap }}
       >
         <Container className="flex h-18 items-center justify-between gap-6 md:h-20">
-          <Link href="/#top" className={cn("relative z-50 flex items-baseline gap-1.5 text-2xl leading-none", open && "text-chalk", focusRing)}>
+          <Link href="/#top" className={cn("relative z-50 flex items-baseline gap-1.5 whitespace-nowrap text-xl leading-none lg:text-2xl", open && "text-chalk", focusRing)}>
             <span className="font-serif">{site.wordmark.serif}</span>
             <span className="font-extrabold tracking-tight">{site.wordmark.sans}</span>
           </Link>
@@ -68,7 +68,7 @@ export function Header() {
                     href={item.href}
                     onMouseEnter={() => setHovered(item.href)}
                     onFocus={() => setHovered(item.href)}
-                    className={cn("relative block rounded-full px-5 py-2.5 text-sm font-medium", focusRing)}
+                    className={cn("relative block rounded-full px-3 py-2.5 text-sm font-medium lg:px-5", focusRing)}
                   >
                     {hovered === item.href && (
                       <motion.span
