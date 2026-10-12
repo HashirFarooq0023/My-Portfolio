@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ meta, className }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-20 grid grid-cols-12 gap-x-6 gap-y-8 md:mb-28", className)}>
+    <div className={cn("mb-12 grid grid-cols-12 gap-x-6 gap-y-8 md:mb-16", className)}>
       <p className="col-span-12 flex items-center gap-3 pt-3 text-sm font-medium md:col-span-3">
         <span>{meta.index}</span>
         <span aria-hidden="true" className="h-px w-10 bg-current" />

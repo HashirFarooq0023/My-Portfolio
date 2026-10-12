@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { aboutContent } from "@/lib/content/about";
-import { site } from "@/lib/content/site";
+import { links, site } from "@/lib/content/site";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import { Icon, type IconName } from "@/components/ui/Icon";
 
 const items: readonly { name: IconName & keyof typeof site.social; href: string }[] = [
+  { name: "whatsapp", href: links.whatsapp },
   { name: "instagram", href: aboutContent.contact.instagram },
   { name: "linkedin", href: aboutContent.contact.linkedin },
   { name: "github", href: aboutContent.contact.github },
@@ -74,7 +75,18 @@ export function SocialFab() {
           ring,
         )}
       >
-        <Icon name="plus" className={cn("size-5 transition-transform duration-500 ease-snap", open && "rotate-[135deg]")} />
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? "close" : "connect"}
+            className="grid place-items-center"
+            initial={reduce ? false : { rotate: -90, scale: 0.5, opacity: 0 }}
+            animate={{ rotate: 0, scale: 1, opacity: 1 }}
+            exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
+            transition={{ duration: 0.25, ease: ease.snap }}
+          >
+            <Icon name={open ? "close" : "connect"} className="size-5" />
+          </motion.span>
+        </AnimatePresence>
       </button>
     </div>
   );

@@ -28,8 +28,8 @@ export const site = {
   ],
   bookCall: { label: "Book a call", href: "/#contact" },
   menu: { open: "Open menu", close: "Close menu" },
-  social: { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram" },
-  fab: { open: "Show social links", close: "Hide social links" },
+  social: { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram", whatsapp: "WhatsApp" },
+  fab: { open: "Connect with me", close: "Close social links" },
 } as const satisfies SiteContent;
 
 export const hero = {

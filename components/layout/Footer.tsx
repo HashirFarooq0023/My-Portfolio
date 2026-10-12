@@ -12,7 +12,7 @@ const link = "transition-colors duration-300 hover:text-volt focus-visible:outli
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ink text-chalk">
-      <Container className="pt-28 md:pt-36">
+      <Container className="pt-20 md:pt-24">
         <div className="grid grid-cols-12 gap-x-6 gap-y-16">
           <div className="col-span-12 lg:col-span-6">
             <p className="text-h2-serif">{footer.cta.serif}</p>
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <div aria-hidden="true" className="mt-24 select-none overflow-hidden whitespace-nowrap px-2 text-center text-[12.5vw] leading-[0.78] text-footer-line">
+      <div aria-hidden="true" className="mt-16 select-none overflow-hidden whitespace-nowrap px-2 text-center text-[12.5vw] leading-[0.78] text-footer-line">
         <RevealText text={`${site.wordmark.serif} ${site.wordmark.sans}`} className="font-extrabold tracking-[-0.06em]" stagger={0.04} />
       </div>
 

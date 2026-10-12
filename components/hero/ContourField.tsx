@@ -28,7 +28,7 @@ export function ContourField() {
       aria-hidden="true"
       viewBox="0 0 1440 900"
       preserveAspectRatio="xMidYMid slice"
-      className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[calc(100svh+240px)] w-full opacity-60"
+      className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[calc(100svh+240px)] w-full opacity-50"
       style={reduce ? undefined : { y }}
     >
       {paths.map((d, i) => (

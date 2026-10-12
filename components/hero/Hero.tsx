@@ -9,11 +9,16 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { HeroPortrait } from "./HeroPortrait";
 import { VisorBand } from "./VisorBand";
 
-// Hero and band together fill exactly one viewport.
+// Hero and band together fill exactly one viewport: a framed top rule, the name centred in the
+// remaining space, and a bottom rule mirroring it with the tagline left and actions right.
 export function Hero() {
   return (
     <section id="top" className="relative flex min-h-svh flex-col overflow-hidden pt-18 md:pt-20">
-      <Container className="relative flex flex-1 flex-col justify-between gap-6 pb-4 pt-4 md:gap-8 md:pt-6">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,var(--color-chalk)_30%,transparent_100%)]"
+      />
+      <Container className="relative flex flex-1 flex-col pb-5 pt-4 md:pt-6">
         <Reveal onLoad delay={0.1} y={12}>
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-3 text-sm font-medium">
             <span>{hero.meta.role}</span>
@@ -32,15 +37,17 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <h1>
-          <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[33vw]" />
-          <span className="text-hero-sans max-sm:text-[19vw] mt-[0.02em] flex items-center justify-end gap-[0.12em]">
-            <HeroPortrait />
-            <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />
-          </span>
-        </h1>
+        <div className="flex flex-1 items-center py-6 md:py-8">
+          <h1 className="w-full">
+            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[33vw]" />
+            <span className="text-hero-sans max-sm:text-[19vw] mt-[0.02em] flex items-center justify-end gap-[0.12em]">
+              <HeroPortrait />
+              <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />
+            </span>
+          </h1>
+        </div>
 
-        <div className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
+        <div className="grid grid-cols-12 items-center gap-x-6 gap-y-5 border-t border-contour pt-5">
           <Reveal onLoad delay={0.9} className="col-span-12 md:col-span-6 lg:col-span-5">
             <p className="max-w-[34ch] text-lead">{hero.lead}</p>
           </Reveal>

@@ -9,7 +9,7 @@ interface SectionProps {
 
 export function Section({ id, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn("relative py-[clamp(6rem,12vw,11rem)]", className)}>
+    <section id={id} className={cn("relative py-[clamp(3.5rem,7vw,6.5rem)]", className)}>
       {children}
     </section>
   );

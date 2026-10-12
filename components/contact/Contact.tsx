@@ -11,7 +11,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative px-3 pb-3 md:px-5 md:pb-5">
       <div className="mx-auto max-w-[1600px] overflow-hidden rounded-shell bg-volt">
-        <Container className="py-[clamp(5rem,10vw,9rem)]">
+        <Container className="py-[clamp(3.5rem,7vw,6rem)]">
           <SectionHeading meta={contact} />
           <div className="grid grid-cols-12 gap-x-6 gap-y-14 lg:gap-x-10">
             <Reveal className="col-span-12 lg:col-span-5">

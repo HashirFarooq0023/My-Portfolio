@@ -17,7 +17,7 @@ export interface SiteContent {
   nav: readonly LinkItem[];
   bookCall: LinkItem;
   menu: { open: string; close: string };
-  social: { github: string; linkedin: string; instagram: string };
+  social: { github: string; linkedin: string; instagram: string; whatsapp: string };
   fab: { open: string; close: string };
 }
 

@@ -13,7 +13,7 @@ export function Projects() {
       <Container>
         <SectionHeading meta={projectsSection} />
         <ProjectGrid />
-        <Reveal className="mt-16 flex justify-center">
+        <Reveal className="mt-12 flex justify-center">
           <Button href={aboutContent.contact.github} variant="secondary" icon="github" target="_blank" rel="noopener noreferrer">
             {projectsSection.allProjects}
           </Button>
