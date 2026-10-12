@@ -22,7 +22,7 @@ export interface SiteContent {
 }
 
 export interface HeroContent {
-  meta: { role: string; location: string; availability: string };
+  meta: { role: string; availability: string };
   name: Headline;
   lead: string;
   secondaryCta: LinkItem;
@@ -32,6 +32,8 @@ export interface HeroContent {
 }
 
 export interface ExperienceItem { role: string; org: string; detail: string }
+
+export interface OffClockItem { label: string; body: string }
 
 export interface AboutSectionContent extends SectionMeta {
   statement: string;
@@ -43,6 +45,8 @@ export interface AboutSectionContent extends SectionMeta {
   experienceTitle: string;
   experience: readonly ExperienceItem[];
   offClockTitle: string;
+  offClockIntro: string;
+  offClock: readonly OffClockItem[];
   skillsTitle: string;
   skillsHint: string;
   skillLabels: Record<keyof AboutSkills, string>;

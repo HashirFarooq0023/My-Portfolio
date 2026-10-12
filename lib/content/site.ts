@@ -35,7 +35,6 @@ export const site = {
 export const hero = {
   meta: {
     role: aboutContent.title,
-    location: `Based in ${aboutContent.location} · PKT (UTC+5)`,
     availability: "Available for new projects",
   },
   name: { serif: "M. Ahmed", sans: "Javed" },
@@ -96,6 +95,12 @@ export const aboutSection = {
     { role: "Graphic Designer", org: "1.5 years", detail: "UI, branding and visual design" },
   ],
   offClockTitle: "Off the clock",
+  offClockIntro:
+    "Good software engineering requires focus, strategy, and problem-solving traits that tend to follow me into my downtime. When I step away from the screen, I like to keep those skills sharp in different ways:",
+  offClock: [
+    { label: "PUBG", body: "A great way to unwind while coordinating with squadmates, reacting under pressure, and thinking two steps ahead." },
+    { label: "Snooker", body: "A game of absolute patience and geometry. Lining up frames is my favorite way to slow down, focus on precision, and enjoy a classic challenge." },
+  ],
   skillsTitle: "Toolkit",
   skillsHint: "The tools I reach for every week.",
   skillLabels: {

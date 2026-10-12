@@ -22,9 +22,8 @@ export function Hero() {
         <Reveal onLoad delay={0.1} y={12}>
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-3 text-sm font-medium">
             <span>{hero.meta.role}</span>
-            <span className="text-graphite">{hero.meta.location}</span>
             <span className="flex w-full items-center justify-between gap-5 sm:w-auto">
-              <span className="flex items-center gap-2.5">
+              <span className="flex items-center gap-2.5 whitespace-nowrap">
               <span className="relative flex size-2.5" aria-hidden="true">
                 <span className="absolute inset-0 animate-ping rounded-full bg-signal opacity-60 motion-reduce:hidden" />
                 <span className="relative size-2.5 rounded-full bg-signal" />
@@ -37,12 +36,14 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <div className="flex flex-1 items-center justify-between gap-3 py-5 md:gap-8 md:py-6">
-          <h1>
-            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif" />
-            <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} className="text-hero-sans mt-[0.02em]" />
+        <div className="flex flex-1 items-center py-4 md:py-5">
+          <h1 className="w-full">
+            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
+            <span className="text-hero-sans max-sm:text-[19vw] mt-[0.06em] flex items-center justify-end gap-[0.12em]">
+              <HeroPortrait />
+              <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />
+            </span>
           </h1>
-          <HeroPortrait />
         </div>
 
         <div className="grid grid-cols-12 items-center gap-x-6 gap-y-5 border-t border-contour pt-5">

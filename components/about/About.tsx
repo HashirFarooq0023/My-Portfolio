@@ -12,7 +12,7 @@ import { Kicker } from "./Kicker";
 const skillKeys = Object.keys(a.skillLabels) as (keyof AboutSkills)[];
 
 export function About() {
-  const [lead, craft, , offClock] = aboutContent.bio;
+  const [lead, craft] = aboutContent.bio;
 
   return (
     <Section id="about">
@@ -49,7 +49,7 @@ export function About() {
             </BentoTile>
           </Reveal>
 
-          <Reveal className="col-span-12 md:col-span-6 lg:col-span-5">
+          <Reveal className="col-span-12 md:col-span-6">
             <BentoTile>
               <Kicker>{a.bioTitle}</Kicker>
               <p className="mt-6 text-lead">{lead}</p>
@@ -57,7 +57,7 @@ export function About() {
             </BentoTile>
           </Reveal>
 
-          <Reveal className="col-span-12 md:col-span-7 lg:col-span-4" delay={0.06}>
+          <Reveal className="col-span-12 md:col-span-6" delay={0.06}>
             <BentoTile>
               <Kicker>{a.experienceTitle}</Kicker>
               <ol className="relative mt-6 space-y-6 border-l border-ink/10 pl-6">
@@ -76,10 +76,30 @@ export function About() {
             </BentoTile>
           </Reveal>
 
-          <Reveal className="col-span-12 md:col-span-5 lg:col-span-3" delay={0.12}>
-            <BentoTile tone="fog">
-              <Kicker>{a.offClockTitle}</Kicker>
-              <p className="mt-6 font-serif text-xl leading-snug">{offClock}</p>
+          <Reveal className="col-span-12">
+            <BentoTile tone="fog" className="md:p-10">
+              <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+                <div className="lg:col-span-5">
+                  <Kicker>{a.offClockTitle}</Kicker>
+                  <p className="mt-6 max-w-[38ch] font-serif text-[clamp(1.25rem,1.8vw,1.625rem)] leading-snug">{a.offClockIntro}</p>
+                </div>
+                <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-7 md:gap-4">
+                  {a.offClock.map((item, idx) => (
+                    <li
+                      key={item.label}
+                      className="group/hobby rounded-panel border border-ink/10 bg-paper/70 p-6 transition-[border-color,background-color,translate] duration-500 ease-snap hover:-translate-y-0.5 hover:border-ink/30 hover:bg-paper"
+                    >
+                      <div className="flex items-baseline justify-between gap-4">
+                        <h4 className="text-xl font-bold tracking-tight">{item.label}</h4>
+                        <span className="font-serif text-2xl italic leading-none text-contour transition-colors duration-500 group-hover/hobby:text-ink">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <p className="mt-3 leading-relaxed text-graphite">{item.body}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </BentoTile>
           </Reveal>
         </div>
