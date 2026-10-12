@@ -3,7 +3,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: "ai" | "fullstack";
+  category: "ai" | "fullstack" | "frontend";
   shortDescription: string;
   liveUrl?: string;
   githubUrl?: string;
@@ -98,6 +98,7 @@ export const projects: Project[] = [
     id: "digisinc-chatbot",
     title: "Digisinc AI Assistant",
     category: "ai",
+    liveUrl: "https://digisinc.systems/chat",
     shortDescription:
       "A RAG-based AI Assistant built for Digisinc Marketing Agency utilizing LangChain and Llama 3.1.",
     githubUrl: "https://github.com/ahmedjavedcodes/Digisinc-chatbot",
@@ -159,6 +160,7 @@ export const projects: Project[] = [
     id: "eatddelight",
     title: "EatDDelight E-Commerce Platform",
     category: "fullstack",
+    liveUrl: "https://eatddelight.com",
     shortDescription:
       "A modern, high-performance e-commerce platform for a homemade kitchen brand, featuring smooth navigation animations and custom backend APIs.",
     githubUrl: "https://github.com/ahmedjavedcodes/eatddelight_frontend",
@@ -174,7 +176,8 @@ export const projects: Project[] = [
   {
     id: "fynrose",
     title: "Fynrose Brand Showcase Page",
-    category: "fullstack",
+    category: "frontend",
+    liveUrl: "https:/fynrose.shop",
     shortDescription:
       "A responsive single-product showcase web application for a natural wellness and organic products brand.",
     githubUrl: "https://github.com/ahmedjavedcodes/fynrose",
@@ -206,7 +209,8 @@ export const projects: Project[] = [
   {
     id: "digisinc-website",
     title: "Digisinc Agency Corporate Site",
-    category: "fullstack",
+    category: "frontend",
+    liveUrl: "https:/digisinc.systems/",
     shortDescription:
       "A responsive, modern agency website built to showcase agency services, case studies, and client portfolios.",
     githubUrl: "https://github.com/ahmedjavedcodes/Digisinc-website",
