@@ -39,14 +39,11 @@ export function Header() {
         className="fixed inset-x-0 top-0 z-110 h-0.5 origin-left bg-ink"
         style={{ scaleX: scrollYProgress }}
       />
-      <motion.header
+      <header
         className={cn(
           "fixed inset-x-0 top-0 z-100 transition-[background-color,border-color,backdrop-filter] duration-500",
           scrolled && !open ? "border-b border-contour/70 bg-chalk/75 backdrop-blur-md" : "border-b border-transparent",
         )}
-        initial={reduce ? false : { y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: ease.snap }}
       >
         <Container className="flex h-18 items-center justify-between gap-6 md:h-20">
           <Link href="/#top" className={cn("relative z-50 flex items-baseline gap-1.5 whitespace-nowrap text-xl leading-none lg:text-2xl", open && "text-chalk", focusRing)}>
@@ -109,7 +106,7 @@ export function Header() {
             </button>
           </div>
         </Container>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (

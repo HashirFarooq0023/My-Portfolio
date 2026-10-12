@@ -30,10 +30,29 @@
   --animate-marquee: marquee 40s linear infinite;
   --animate-marquee-reverse: marquee 48s linear infinite reverse;
   --animate-nudge: nudge 2.4s var(--ease-glide) infinite;
+  --animate-rise: rise 0.9s var(--ease-snap) both;
+  --animate-fade-up: fade-up 0.8s var(--ease-snap) both;
+  --animate-settle: settle 1.6s var(--ease-snap) both;
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+
+  /* Above-the-fold entrances run in CSS so they play before hydration (fast FCP/LCP). */
+  @keyframes rise {
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(var(--rise, 16px)); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes settle {
+    from { transform: scale(1.15); }
+    to { transform: scale(1); }
   }
 
   @keyframes nudge {

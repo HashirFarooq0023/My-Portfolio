@@ -1,0 +1,7 @@
+// Canonical origin for metadata, sitemap and robots.
+// Set NEXT_PUBLIC_SITE_URL in production (e.g. a custom domain); on Vercel it falls back
+// to the project's production URL, and to localhost in development.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
+).replace(/\/$/, "");

@@ -19,7 +19,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,var(--color-chalk)_30%,transparent_100%)]"
       />
       <Container className="relative flex flex-1 flex-col pb-[clamp(0.75rem,2svh,1.25rem)] pt-[clamp(0.5rem,1.5svh,1.5rem)]">
-        <Reveal onLoad delay={0.1} y={12}>
+        <Reveal onLoad delay={0.05} y={12}>
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-3 text-sm font-medium">
             <span>{hero.meta.role}</span>
             <span className="flex w-full items-center justify-between gap-5 sm:w-auto">
@@ -38,19 +38,19 @@ export function Hero() {
 
         <div className="flex flex-1 items-center py-[clamp(0.5rem,2.5svh,1.75rem)]">
           <h1 className="w-full">
-            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
+            <RevealText onLoad delay={0.1} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
             <span className="text-hero-sans max-sm:text-[19vw] mt-[0.06em] flex items-center justify-end gap-[0.12em] sm:mt-[0.14em]">
               <HeroPortrait />
-              <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />
+              <RevealText onLoad delay={0.2} text={hero.name.sans} />
             </span>
           </h1>
         </div>
 
         <div className="grid grid-cols-12 items-center gap-x-6 gap-y-3 border-t border-contour pt-[clamp(0.75rem,2svh,1.25rem)] md:gap-y-5">
-          <Reveal onLoad delay={0.9} className="col-span-12 md:col-span-6 lg:col-span-5">
+          <Reveal onLoad delay={0.35} className="col-span-12 md:col-span-6 lg:col-span-5">
             <p className="max-w-[34ch] text-lead max-sm:text-xl">{hero.lead}</p>
           </Reveal>
-          <Reveal onLoad delay={1.05} className="col-span-12 flex flex-wrap items-center gap-2 sm:gap-3 md:col-span-6 md:justify-end md:gap-4 lg:col-span-7">
+          <Reveal onLoad delay={0.45} className="col-span-12 flex flex-wrap items-center gap-2 sm:gap-3 md:col-span-6 md:justify-end md:gap-4 lg:col-span-7">
             <Button href={site.bookCall.href} icon="calendar">{site.bookCall.label}</Button>
             <Button href={hero.secondaryCta.href} variant="secondary">{hero.secondaryCta.label}</Button>
             <div className="hidden lg:block">

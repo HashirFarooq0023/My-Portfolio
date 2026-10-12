@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
@@ -12,9 +13,22 @@ interface RevealTextProps {
   stagger?: number;
 }
 
-// Splits text into characters that rise out of a per-word mask. Screen readers get the plain string.
+// onLoad: the line rises out of a mask with a pure CSS animation, so it is painted before
+// hydration. In view: characters rise out of per-word masks via Motion. Screen readers get the plain string.
 export function RevealText({ text, className, delay = 0, onLoad = false, stagger = 0.03 }: RevealTextProps) {
   const reduce = useReducedMotion();
+  if (onLoad) {
+    return (
+      <span className={cn("-mb-[0.1em] block overflow-hidden pb-[0.1em]", className)}>
+        <span
+          className="block animate-rise [animation-delay:var(--delay)] motion-reduce:animate-none"
+          style={{ "--delay": `${delay}s` } as CSSProperties}
+        >
+          {text}
+        </span>
+      </span>
+    );
+  }
   const words = text.split(" ");
   let n = 0;
 
@@ -34,7 +48,8 @@ export function RevealText({ text, className, delay = 0, onLoad = false, stagger
         className="block"
         variants={container}
         initial="hidden"
-        {...(onLoad ? { animate: "show" } : { whileInView: "show", viewport: { once: true, amount: 0.5 } })}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.5 }}
       >
         {words.map((word, w) => (
           <span key={`${word}-${w}`} className="-mb-[0.12em] inline-flex overflow-hidden pb-[0.12em] whitespace-nowrap">

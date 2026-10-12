@@ -14,6 +14,12 @@ export const site = {
   lang: "en",
   metadata: {
     title: `${aboutContent.name} | ${aboutContent.title}`,
+    titleTemplate: `%s | ${aboutContent.name}`,
+    siteName: aboutContent.name,
+    locale: "en_US",
+    keywords: ["AI engineer", "full stack developer", "Next.js developer", "RAG pipelines", "AI agents", "LangGraph", "FastAPI", "Pakistan"],
+    ogImageAlt: `${aboutContent.name}, ${aboutContent.title}`,
+    ogKicker: "Available for new projects",
     description:
       "AI engineer and full-stack developer in Pakistan. I build AI agents, RAG pipelines and fast Next.js web apps for teams that want to ship.",
   },

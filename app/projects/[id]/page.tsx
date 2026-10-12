@@ -27,9 +27,16 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = projects.find((p) => p.id === id);
   if (!project) return {};
   return {
-    title: `${project.title} | ${projectDetail.metaTitle} | ${aboutContent.name}`,
+    title: `${project.title} | ${projectDetail.metaTitle}`,
     description: project.shortDescription,
-    openGraph: project.gallery?.[0] ? { images: [project.gallery[0].src.src] } : undefined,
+    alternates: { canonical: `/projects/${project.id}` },
+    openGraph: {
+      type: "article",
+      url: `/projects/${project.id}`,
+      title: `${project.title} | ${aboutContent.name}`,
+      description: project.shortDescription,
+      ...(project.gallery?.[0] && { images: [{ url: project.gallery[0].src.src, alt: project.gallery[0].alt }] }),
+    },
   };
 }
 
@@ -87,7 +94,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <Container>
               <Reveal onLoad delay={0.55} y={40}>
                 <div className="overflow-hidden rounded-card border border-contour bg-fog">
-                  <Image src={cover.src} alt={cover.alt} priority placeholder="blur" sizes="(min-width: 1440px) 1330px, 95vw" className="h-auto w-full" />
+                  <Image src={cover.src} alt={cover.alt} preload placeholder="blur" sizes="(min-width: 1440px) 1330px, 95vw" className="h-auto w-full" />
                 </div>
               </Reveal>
             </Container>

@@ -11,7 +11,16 @@ export interface SectionMeta { index: string; label: string; headline: Headline 
 
 export interface SiteContent {
   lang: string;
-  metadata: { title: string; description: string };
+  metadata: {
+    title: string;
+    titleTemplate: string;
+    description: string;
+    siteName: string;
+    locale: string;
+    keywords: readonly string[];
+    ogImageAlt: string;
+    ogKicker: string;
+  };
   wordmark: Headline;
   skipLink: string;
   nav: readonly LinkItem[];
