@@ -14,15 +14,20 @@ export function CalendlyEmbed() {
 
   return (
     <div ref={ref}>
-      <div className="min-h-[680px]">
+      <div className="min-h-170 bg-chalk">
         {near && (
           <>
-            <div className="calendly-inline-widget h-[680px] w-full" data-url={url} />
+            <div className="calendly-inline-widget h-170 w-full" data-url={url} />
             <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
           </>
         )}
       </div>
-      <a href={base} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+      <a
+        href={base}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-paper px-4 py-3 text-sm underline decoration-contour underline-offset-4 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+      >
         {contact.calendlyFallback}
       </a>
     </div>

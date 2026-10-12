@@ -1,4 +1,11 @@
-import type { AboutSectionContent, ContactContent, HeroContent, SiteContent, WorkContent } from "./types";
+import type {
+  AboutSectionContent,
+  ContactContent,
+  FooterContent,
+  HeroContent,
+  SiteContent,
+  WorkContent,
+} from "./types";
 import { aboutContent } from "./about";
 import portrait from "./images/2.jpeg";
 import aboutImage from "./images/1.jpeg";
@@ -13,34 +20,36 @@ export const site = {
   skipLink: "Skip to content",
   nav: [
     { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
     { label: "Work", href: "#work" },
     { label: "Contact", href: "#contact" },
   ],
   bookCall: { label: "Book a call", href: "#contact" },
   menu: { open: "Open menu", close: "Close menu" },
-  footer: { copyright: `© ${new Date().getFullYear()} ${aboutContent.name}`, navLabel: "Footer" },
   social: { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram" },
 } as const satisfies SiteContent;
 
 export const hero = {
-  headline: { serif: "Hi, I'm Ahmed.", sans: "I build AI that ships." },
-  lead: "AI engineer and full-stack developer. I design and build AI systems and web apps that save your team hours every week.",
-  secondaryCta: { label: "See my work", href: "#work" },
-  availability: {
-    label: "Available",
-    status: "Taking new projects",
-    lines: [`Based in ${aboutContent.location}, PKT (UTC+5)`, "Reply within 24 hours"],
+  meta: {
+    role: aboutContent.title,
+    location: `Based in ${aboutContent.location} · PKT (UTC+5)`,
+    availability: "Available for new projects",
   },
-  band: ["RAG pipelines", "AI agents", "Next.js apps", "MCP servers", "FastAPI backends"],
+  name: { serif: "Ahmed", sans: "Javed" },
+  lead: "I design and build AI systems and web apps that save your team hours every week.",
+  secondaryCta: { label: "See my work", href: "#work" },
+  scroll: { label: "Scroll to about", href: "#about" },
+  band: ["RAG pipelines", "AI agents", "Next.js apps", "MCP servers", "FastAPI backends", "LLM evals"],
   portrait: { src: portrait, alt: "Portrait of Ahmed Javed with arms crossed, standing by a brick and tile pillar" },
 } as const satisfies HeroContent;
 
 export const aboutSection = {
+  index: "01",
+  label: "About",
   headline: { serif: "Engineer first.", sans: "Builder by habit." },
+  statement: aboutContent.tagline,
   image: { src: aboutImage, alt: "Ahmed Javed in a white kurta leaning on a brick wall outdoors" },
-  specTitle: "Spec sheet",
-  roleLabel: "Role",
-  locationLabel: "Based in",
+  skillsTitle: "Toolkit",
   skillLabels: {
     languages: "Languages",
     frontend: "Frontend",
@@ -52,29 +61,45 @@ export const aboutSection = {
 } as const satisfies AboutSectionContent;
 
 export const work = {
+  index: "03",
+  label: "Work",
   headline: { serif: "Recent work.", sans: "Shipped, not just sketched." },
-  groups: [
-    { id: "ai", label: { serif: "Agents, RAG and automation.", sans: "AI systems" }, categories: ["ai"] },
-    { id: "fullstack", label: { serif: "From database to deployment.", sans: "Full stack & web" }, categories: ["fullstack", "frontend"] },
+  filtersLabel: "Filter projects",
+  filters: [
+    { id: "all", label: "All", categories: ["ai", "fullstack", "frontend"] },
+    { id: "ai", label: "AI systems", categories: ["ai"] },
+    { id: "fullstack", label: "Full stack & web", categories: ["fullstack", "frontend"] },
   ],
   typeLabels: { ai: "AI system", fullstack: "Web app", frontend: "Website" },
   featuredLabel: "Featured",
+  openLabel: "Open project:",
   liveLabel: "Live site",
   codeLabel: "Code",
   allProjects: "All projects on GitHub",
 } as const satisfies WorkContent;
 
 export const contact = {
+  index: "04",
+  label: "Contact",
   headline: { serif: "Let's talk about your project.", sans: "Book a free 30-minute call." },
-  tabLabel: "Pick a time",
+  calendarTitle: "Pick a time",
   whatsappLabel: "WhatsApp",
   whatsappText: "Hi Ahmed, I saw your portfolio and I'd like to discuss a project.",
   emailLabel: "Email",
   emailSubject: "Project inquiry",
   mailFallback: "or use your mail app",
-  reply: "Reply within 24 hours",
+  reply: "I reply within 24 hours",
   calendlyFallback: "Open the booking page",
 } as const satisfies ContactContent;
+
+export const footer = {
+  cta: { serif: "Have an idea?", sans: "Let's build it." },
+  navTitle: "Navigate",
+  socialTitle: "Elsewhere",
+  contactTitle: "Say hello",
+  backToTop: "Back to top",
+  copyright: `© ${new Date().getFullYear()} ${aboutContent.name}`,
+} as const satisfies FooterContent;
 
 const { email, whatsapp } = aboutContent.contact;
 

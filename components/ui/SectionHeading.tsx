@@ -1,15 +1,24 @@
-import type { Headline } from "@/lib/content/types";
-import { RevealLine } from "./RevealLine";
+import type { SectionMeta } from "@/lib/content/types";
+import { cn } from "@/lib/cn";
+import { RevealText } from "./RevealText";
 
 interface SectionHeadingProps {
-  headline: Headline;
+  meta: SectionMeta;
+  className?: string;
 }
 
-export function SectionHeading({ headline }: SectionHeadingProps) {
+export function SectionHeading({ meta, className }: SectionHeadingProps) {
   return (
-    <h2 className="mb-16">
-      <RevealLine className="text-h2-serif">{headline.serif}</RevealLine>
-      <RevealLine className="text-h2-sans" index={1}>{headline.sans}</RevealLine>
-    </h2>
+    <div className={cn("mb-20 grid grid-cols-12 gap-x-6 gap-y-8 md:mb-28", className)}>
+      <p className="col-span-12 flex items-center gap-3 pt-3 text-sm font-medium md:col-span-3">
+        <span>{meta.index}</span>
+        <span aria-hidden="true" className="h-px w-10 bg-current" />
+        <span className="opacity-70">{meta.label}</span>
+      </p>
+      <h2 className="col-span-12 md:col-span-9">
+        <RevealText text={meta.headline.serif} className="text-h2-serif" />
+        <RevealText text={meta.headline.sans} className="text-h2-sans" delay={0.15} stagger={0.02} />
+      </h2>
+    </div>
   );
 }

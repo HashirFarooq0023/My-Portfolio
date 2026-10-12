@@ -1,39 +1,37 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import { hero } from "@/lib/content/site";
-import { ease } from "@/lib/motion";
+import { cn } from "@/lib/cn";
 
-export function VisorBand() {
-  const reduce = useReducedMotion();
+interface BandProps {
+  className: string;
+  track: string;
+  dot: string;
+}
+
+function Band({ className, track, dot }: BandProps) {
   const phrases = [...hero.band, ...hero.band];
-
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-x-[-12%] top-[62%] -rotate-3">
-      <motion.div
-        className="absolute inset-x-[-6%] -top-4 h-4 rounded-full bg-fog/60 blur-sm"
-        initial={reduce ? false : { opacity: 0, x: -40 }}
-        animate={{ opacity: 0.6, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-      />
-      <motion.div
-        className="overflow-hidden bg-ink py-3"
-        initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
-        animate={{ clipPath: "inset(0 0% 0 0)" }}
-        transition={{ duration: 0.55, ease: ease.snap, delay: 0.45 }}
-      >
-        <div className="flex w-max animate-marquee gap-10 whitespace-nowrap font-sans text-lg font-extrabold text-volt motion-reduce:animate-none">
-          {phrases.map((p, i) => (
-            <span key={`${p}-${i}`}>{p}</span>
-          ))}
-        </div>
-      </motion.div>
-      <motion.div
-        className="absolute inset-x-[4%] -bottom-4 h-3 rounded-full bg-fog/60 blur-sm"
-        initial={reduce ? false : { opacity: 0, x: -40 }}
-        animate={{ opacity: 0.6, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-      />
+    <div className={cn("absolute inset-x-[-5%] overflow-hidden py-5 md:py-6", className)}>
+      <div className={cn("flex w-max items-center whitespace-nowrap motion-reduce:animate-none", track)}>
+        {phrases.map((p, i) => (
+          <span
+            key={`${p}-${i}`}
+            className="flex items-center gap-8 pr-8 font-sans font-condensed text-3xl font-extrabold uppercase md:gap-12 md:pr-12 md:text-5xl"
+          >
+            {p}
+            <span className={cn("size-2.5 rotate-45 md:size-3", dot)} />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Two crossing marquee bands: the Visor Band, recast as a section divider.
+export function VisorBand() {
+  return (
+    <div aria-hidden="true" className="relative h-44 overflow-hidden md:h-60">
+      <Band className="top-1/2 -translate-y-1/2 rotate-[2.5deg] bg-volt text-ink" track="animate-marquee-reverse" dot="bg-ink" />
+      <Band className="top-1/2 -translate-y-1/2 -rotate-2 bg-ink text-volt" track="animate-marquee" dot="bg-volt" />
     </div>
   );
 }

@@ -7,6 +7,7 @@ export type ProjectCategory = Project["category"];
 export interface ImageAsset { src: StaticImageData; alt: string }
 export interface LinkItem { label: string; href: string }
 export interface Headline { serif: string; sans: string }
+export interface SectionMeta { index: string; label: string; headline: Headline }
 
 export interface SiteContent {
   lang: string;
@@ -16,41 +17,61 @@ export interface SiteContent {
   nav: readonly LinkItem[];
   bookCall: LinkItem;
   menu: { open: string; close: string };
-  footer: { copyright: string; navLabel: string };
   social: { github: string; linkedin: string; instagram: string };
 }
 
 export interface HeroContent {
-  headline: Headline;
+  meta: { role: string; location: string; availability: string };
+  name: Headline;
   lead: string;
   secondaryCta: LinkItem;
-  availability: { label: string; status: string; lines: readonly string[] };
+  scroll: LinkItem;
   band: readonly string[];
   portrait: ImageAsset;
 }
 
-export interface AboutSectionContent {
-  headline: Headline;
+export interface AboutSectionContent extends SectionMeta {
+  statement: string;
   image: ImageAsset;
-  specTitle: string;
-  roleLabel: string;
-  locationLabel: string;
+  skillsTitle: string;
   skillLabels: Record<keyof AboutSkills, string>;
 }
 
-export interface WorkContent {
-  headline: Headline;
-  groups: readonly { id: string; label: Headline; categories: readonly ProjectCategory[] }[];
+export interface Service {
+  id: string;
+  name: string;
+  outcome: string;
+  deliverables: readonly string[];
+  timeline: string;
+  stack: string;
+}
+
+export interface ProcessStep { title: string; body: string }
+
+export interface ServicesContent extends SectionMeta {
+  deliverablesLabel: string;
+  timelineLabel: string;
+  stackLabel: string;
+  items: readonly Service[];
+  processTitle: string;
+  process: readonly ProcessStep[];
+}
+
+export interface WorkFilter { id: string; label: string; categories: readonly ProjectCategory[] }
+
+export interface WorkContent extends SectionMeta {
+  filtersLabel: string;
+  filters: readonly WorkFilter[];
   typeLabels: Record<ProjectCategory, string>;
   featuredLabel: string;
+  openLabel: string;
   liveLabel: string;
   codeLabel: string;
   allProjects: string;
 }
 
-export interface ContactContent {
-  headline: Headline;
-  tabLabel: string;
+export interface ContactContent extends SectionMeta {
+  calendarTitle: string;
   whatsappLabel: string;
   whatsappText: string;
   emailLabel: string;
@@ -58,4 +79,13 @@ export interface ContactContent {
   mailFallback: string;
   reply: string;
   calendlyFallback: string;
+}
+
+export interface FooterContent {
+  cta: Headline;
+  navTitle: string;
+  socialTitle: string;
+  contactTitle: string;
+  backToTop: string;
+  copyright: string;
 }

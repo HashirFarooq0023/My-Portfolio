@@ -1,6 +1,16 @@
 import { cn } from "@/lib/cn";
 
-export type IconName = "github" | "linkedin" | "instagram" | "whatsapp" | "mail" | "calendar";
+export type IconName =
+  | "github"
+  | "linkedin"
+  | "instagram"
+  | "whatsapp"
+  | "mail"
+  | "calendar"
+  | "arrowUpRight"
+  | "arrowDown"
+  | "arrowUp"
+  | "plus";
 
 interface IconProps {
   name: IconName;
@@ -20,12 +30,16 @@ const stroked: Partial<Record<IconName, string>> = {
   instagram: "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm5.5-1.5h.01",
   mail: "M3 5h18v14H3zM3 6l9 7 9-7",
   calendar: "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",
+  arrowUpRight: "M7 17 17 7M8 7h9v9",
+  arrowDown: "M12 5v14M6 13l6 6 6-6",
+  arrowUp: "M12 19V5M6 11l6-6 6 6",
+  plus: "M12 5v14M5 12h14",
 };
 
 export function Icon({ name, className }: IconProps) {
   const fill = filled[name];
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={cn("size-5", className)}>
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={cn("size-5 shrink-0", className)}>
       {fill ? (
         <path d={fill} fill="currentColor" />
       ) : (
