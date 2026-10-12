@@ -180,9 +180,9 @@ export const projects: Project[] = [
       "Polished front end: App Router, custom components and unit tests.",
     ],
     gallery: [
+      { src: bakersCart, alt: "Cart page with order summary and invoice ready to send" },
       { src: bakersProducts, alt: "All products page with category filters and search" },
       { src: bakersHome, alt: "The Baker's Inn home page with product categories and featured cakes" },
-      { src: bakersCart, alt: "Cart page with order summary and invoice ready to send" },
       { src: bakersDashboard, alt: "Owner dashboard linking to categories, products and team" },
       { src: bakersCatalog, alt: "Admin product list with edit and remove actions" },
       { src: bakersCategories, alt: "Admin categories page for creating and ordering product categories" },

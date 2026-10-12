@@ -8,7 +8,7 @@ import type {
   SiteContent,
 } from "./types";
 import { aboutContent } from "./about";
-import portrait from "./images/hero-portrait.png";
+import portrait from "./images/2.jpeg";
 
 export const site = {
   lang: "en",

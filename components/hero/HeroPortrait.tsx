@@ -5,16 +5,16 @@ import { motion, useReducedMotion } from "motion/react";
 import { hero } from "@/lib/content/site";
 import { ease } from "@/lib/motion";
 
-// Rounded portrait set inline with the surname, at the photo's own 651:780 ratio so the
-// full head-to-chest crop shows without extra cropping. Sized in em of the surname.
+// Wide pill portrait set inline with the surname, framed from the hair line to the collar.
+// Sized in em of the surname so it scales with the name.
 export function HeroPortrait() {
   const reduce = useReducedMotion();
 
   return (
     <motion.span
-      className="relative inline-block h-[1.25em] w-[1.045em] shrink-0 overflow-hidden rounded-[0.3em] bg-fog"
-      initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 50% 0 50% round 0.3em)" }}
-      animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0% 0 0% round 0.3em)" }}
+      className="relative inline-block h-[1em] w-[1.55em] shrink-0 overflow-hidden rounded-full bg-fog sm:h-[1.05em] sm:w-[2.55em]"
+      initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 50% 0 50% round 999px)" }}
+      animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0% 0 0% round 999px)" }}
       transition={{ duration: 1.1, ease: ease.snap, delay: 0.55 }}
     >
       <motion.span
@@ -29,8 +29,8 @@ export function HeroPortrait() {
           fill
           priority
           placeholder="blur"
-          sizes="(min-width: 1024px) 18vw, 30vw"
-          className="object-cover"
+          sizes="(min-width: 1024px) 30vw, 40vw"
+          className="object-cover object-[50%_28%]"
         />
       </motion.span>
     </motion.span>
