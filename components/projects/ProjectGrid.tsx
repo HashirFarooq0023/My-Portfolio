@@ -27,7 +27,7 @@ export function ProjectGrid() {
         <div
           role="group"
           aria-label={work.filtersLabel}
-          className="pointer-events-auto inline-flex flex-wrap gap-1 rounded-full border border-contour bg-paper/85 p-1.5 shadow-lg shadow-ink/5 backdrop-blur-md"
+          className="pointer-events-auto inline-flex max-w-full gap-0.5 overflow-x-auto rounded-full border border-contour bg-paper/85 p-1 shadow-lg shadow-ink/5 backdrop-blur-md [scrollbar-width:none] sm:gap-1 sm:p-1.5 [&::-webkit-scrollbar]:hidden"
         >
           {work.filters.map((f) => (
             <button
@@ -35,7 +35,7 @@ export function ProjectGrid() {
               type="button"
               aria-pressed={active === f.id}
               onClick={() => setActive(f.id)}
-              className="relative rounded-full px-5 py-2.5 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              className="relative shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-[0.8125rem] font-medium focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink sm:px-5 sm:py-2.5 sm:text-sm"
             >
               {active === f.id && (
                 <motion.span layoutId="work-filter" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />
