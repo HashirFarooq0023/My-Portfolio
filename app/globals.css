@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-chalk: #F5F5F1;
+  --color-paper: #FFFFFF;
+  --color-fog: #E8E8E2;
+  --color-contour: #D6D6CF;
+  --color-graphite: #62625C;
+  --color-ink: #151514;
+  --color-volt: #D4FF00;
+  --color-volt-deep: #4E6200;
+  --color-whatsapp: #25D366;
+  --color-gmail: #EA4335;
+  --color-signal: #1F9D55;
+  --color-danger: #C2361F;
+  --color-footer-line: #2A2A27;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-serif: var(--font-instrument-serif), "Times New Roman", serif;
+  --font-sans: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-chip: 6px;
+  --radius-control: 14px;
+  --radius-panel: 20px;
+
+  --ease-snap: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-glide: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  background: var(--color-chalk);
+  color: var(--color-ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+::selection { background: var(--color-volt); color: var(--color-ink); }
+
+@utility text-display-serif { font-family: var(--font-serif); font-size: clamp(3rem, 8.5vw, 8.5rem); line-height: .92; letter-spacing: -.02em; }
+@utility text-display-sans  { font-family: var(--font-sans); font-weight: 800; font-size: clamp(2.75rem, 7.8vw, 7.75rem); line-height: .9; letter-spacing: -.035em; }
+@utility text-h2-serif      { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4.75rem); line-height: 1; letter-spacing: -.015em; }
+@utility text-h2-sans       { font-family: var(--font-sans); font-weight: 750; font-size: clamp(2.25rem, 4.6vw, 4.25rem); line-height: .95; letter-spacing: -.03em; }
+@utility text-lead          { font-family: var(--font-serif); font-size: clamp(1.375rem, 2vw, 1.75rem); line-height: 1.35; }
+@utility font-condensed     { font-stretch: 75%; }
+
+.tab-clip {
+  clip-path: polygon(
+    0 var(--tab-h),
+    var(--tab-w) var(--tab-h),
+    calc(var(--tab-w) + var(--tab-h)) 0,
+    100% 0, 100% 100%, 0 100%
+  );
 }
