@@ -9,6 +9,7 @@ import { projectsSection } from "@/lib/content/site";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/ui/Icon";
+import { TechLabel } from "@/components/ui/TechLabel";
 import { ProjectLinks } from "./ProjectLinks";
 
 interface ProjectCardProps {
@@ -66,8 +67,8 @@ export const ProjectCard = forwardRef<HTMLElement, ProjectCardProps>(function Pr
       <p className={cn("mt-3 max-w-[52ch] text-graphite group-hover:text-contour", fade)}>{project.shortDescription}</p>
       <ul className="mt-5 flex flex-wrap gap-1.5">
         {project.techStack.slice(0, cover ? 5 : 4).map((t) => (
-          <li key={t} className={cn("rounded-full bg-fog px-3 py-1 text-[0.8125rem] group-hover:bg-footer-line group-hover:text-chalk", fade)}>
-            {t}
+          <li key={t} className={cn("inline-flex items-center rounded-full bg-fog px-3 py-1.5 text-[0.8125rem] group-hover:bg-footer-line group-hover:text-chalk", fade)}>
+            <TechLabel name={t} />
           </li>
         ))}
       </ul>

@@ -23,23 +23,29 @@ export function ProjectGrid() {
 
   return (
     <>
-      <div role="group" aria-label={work.filtersLabel} className="mb-12 inline-flex flex-wrap gap-1 rounded-full border border-contour bg-paper p-1.5">
-        {work.filters.map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            aria-pressed={active === f.id}
-            onClick={() => setActive(f.id)}
-            className="relative rounded-full px-5 py-2.5 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-          >
-            {active === f.id && (
-              <motion.span layoutId="work-filter" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />
-            )}
-            <span className={cn("relative transition-colors duration-300", active === f.id ? "text-chalk" : "text-graphite hover:text-ink")}>
-              {f.label}
-            </span>
-          </button>
-        ))}
+      <div className="pointer-events-none sticky top-24 z-20 mb-12">
+        <div
+          role="group"
+          aria-label={work.filtersLabel}
+          className="pointer-events-auto inline-flex flex-wrap gap-1 rounded-full border border-contour bg-paper/85 p-1.5 shadow-lg shadow-ink/5 backdrop-blur-md"
+        >
+          {work.filters.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              aria-pressed={active === f.id}
+              onClick={() => setActive(f.id)}
+              className="relative rounded-full px-5 py-2.5 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            >
+              {active === f.id && (
+                <motion.span layoutId="work-filter" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 380, damping: 32 }} />
+              )}
+              <span className={cn("relative transition-colors duration-300", active === f.id ? "text-chalk" : "text-graphite hover:text-ink")}>
+                {f.label}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {media.length > 0 && (

@@ -12,7 +12,14 @@ export type IconName =
   | "arrowUp"
   | "plus"
   | "connect"
-  | "close";
+  | "close"
+  | "database"
+  | "bolt"
+  | "search"
+  | "scan"
+  | "layers"
+  | "code"
+  | "loop";
 
 interface IconProps {
   name: IconName;
@@ -38,6 +45,13 @@ const stroked: Partial<Record<IconName, string>> = {
   plus: "M12 5v14M5 12h14",
   connect: "M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4",
   close: "M6 6l12 12M18 6 6 18",
+  database: "M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3",
+  bolt: "M13 2 4 14h7l-1 8 9-12h-7l1-8z",
+  search: "M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4",
+  scan: "M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4M7 12h10",
+  layers: "M12 3 2 8l10 5 10-5-10-5zM2 16l10 5 10-5M2 12l10 5 10-5",
+  code: "M8 6l-6 6 6 6M16 6l6 6-6 6",
+  loop: "M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4",
 };
 
 export function Icon({ name, className }: IconProps) {

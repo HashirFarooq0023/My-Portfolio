@@ -39,7 +39,7 @@ export function Hero() {
 
         <div className="flex flex-1 items-center py-6 md:py-8">
           <h1 className="w-full">
-            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[33vw]" />
+            <RevealText onLoad delay={0.2} stagger={0.05} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
             <span className="text-hero-sans max-sm:text-[19vw] mt-[0.02em] flex items-center justify-end gap-[0.12em]">
               <HeroPortrait />
               <RevealText onLoad delay={0.35} stagger={0.05} text={hero.name.sans} />

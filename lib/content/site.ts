@@ -38,7 +38,7 @@ export const hero = {
     location: `Based in ${aboutContent.location} · PKT (UTC+5)`,
     availability: "Available for new projects",
   },
-  name: { serif: "Ahmed", sans: "Javed" },
+  name: { serif: "M. Ahmed", sans: "Javed" },
   lead: "I design and build AI systems and web apps that save your team hours every week.",
   secondaryCta: { label: "See my work", href: "#projects" },
   scroll: { label: "Scroll to projects", href: "#projects" },

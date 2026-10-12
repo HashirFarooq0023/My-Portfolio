@@ -5,6 +5,7 @@ import { Section } from "@/components/layout/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WordsReveal } from "@/components/ui/WordsReveal";
+import { TechLabel } from "@/components/ui/TechLabel";
 import { BentoTile } from "./BentoTile";
 import { Kicker } from "./Kicker";
 
@@ -101,9 +102,9 @@ export function About() {
                   {aboutContent.skills[k].map((s) => (
                     <li
                       key={s}
-                      className="cursor-default rounded-full border border-ink/10 bg-chalk/70 px-3.5 py-1.5 text-sm transition-[background-color,color,border-color,translate] duration-300 ease-snap hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-chalk"
+                      className="inline-flex cursor-default items-center rounded-full border border-ink/10 bg-chalk/70 px-3.5 py-2 text-sm transition-[background-color,color,border-color,translate] duration-300 ease-snap hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-chalk"
                     >
-                      {s}
+                      <TechLabel name={s} />
                     </li>
                   ))}
                 </ul>

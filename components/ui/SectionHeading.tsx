@@ -1,24 +1,29 @@
 import type { SectionMeta } from "@/lib/content/types";
 import { cn } from "@/lib/cn";
 import { RevealText } from "./RevealText";
+import { RuleLine } from "./RuleLine";
 
 interface SectionHeadingProps {
   meta: SectionMeta;
   className?: string;
 }
 
+// Editorial header: serif numeral, a hairline that draws across, a tracked label chip,
+// then the two-voice headline set flush left beneath it.
 export function SectionHeading({ meta, className }: SectionHeadingProps) {
   return (
-    <div className={cn("mb-12 grid grid-cols-12 gap-x-6 gap-y-8 md:mb-16", className)}>
-      <p className="col-span-12 flex items-center gap-3 pt-3 text-sm font-medium md:col-span-3">
-        <span>{meta.index}</span>
-        <span aria-hidden="true" className="h-px w-10 bg-current" />
-        <span className="opacity-70">{meta.label}</span>
-      </p>
-      <h2 className="col-span-12 md:col-span-9">
+    <header className={cn("mb-12 md:mb-16", className)}>
+      <div className="flex items-center gap-4 md:gap-6">
+        <span className="font-serif text-[clamp(1.75rem,2.6vw,2.5rem)] italic leading-none">{meta.index}</span>
+        <RuleLine className="flex-1" />
+        <span className="rounded-full border border-current/20 px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase leading-none tracking-[0.18em]">
+          {meta.label}
+        </span>
+      </div>
+      <h2 className="mt-8 md:mt-10">
         <RevealText text={meta.headline.serif} className="text-h2-serif" />
         <RevealText text={meta.headline.sans} className="text-h2-sans" delay={0.15} stagger={0.02} />
       </h2>
-    </div>
+    </header>
   );
 }

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealText } from "@/components/ui/RevealText";
+import { TechLabel } from "@/components/ui/TechLabel";
 
 interface ProjectPageProps {
   params: Promise<{ id: string }>;
@@ -103,8 +104,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <dt className="text-sm text-graphite">{projectDetail.stackLabel}</dt>
                   <dd className="mt-3 flex flex-wrap gap-2">
                     {project.techStack.map((t) => (
-                      <span key={t} className="rounded-full border border-contour bg-paper px-3.5 py-1.5 text-sm transition-[background-color,color,border-color,translate] duration-300 hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-chalk">
-                        {t}
+                      <span key={t} className="inline-flex items-center rounded-full border border-contour bg-paper px-3.5 py-2 text-sm transition-[background-color,color,border-color,translate] duration-300 hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-chalk">
+                        <TechLabel name={t} />
                       </span>
                     ))}
                   </dd>
