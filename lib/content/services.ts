@@ -3,7 +3,7 @@ import type { ProcessContent, ServicesContent } from "./types";
 export const services = {
   index: "02",
   label: "Services",
-  headline: { serif: "What I can build for you.", sans: "Three ways to work together." },
+  headline: { serif: "What I can build for you.", sans: "Four ways to work together." },
   deliverablesLabel: "What you get",
   timelineLabel: "Typical timeline",
   stackLabel: "Stack",
@@ -35,9 +35,9 @@ export const services = {
       stack: "LangChain, LangGraph, FastAPI, Next.js",
     },
     {
-      id: "web-app",
-      name: "Web Application",
-      outcome: "Fast, production-grade web apps and storefronts, from database to deployment.",
+      id: "full-stack",
+      name: "Full Stack Application",
+      outcome: "Production-grade web apps with real back ends, from database to deployment.",
       deliverables: [
         "Data model, API and role-based auth",
         "Responsive Next.js front end",
@@ -46,6 +46,19 @@ export const services = {
       ],
       timeline: "2-4 weeks",
       stack: "Next.js, TypeScript, FastAPI, PostgreSQL",
+    },
+    {
+      id: "storefronts",
+      name: "Web Storefronts and Landing Pages",
+      outcome: "Fast, good-looking storefronts and landing pages that turn visitors into customers.",
+      deliverables: [
+        "Custom design, not a template",
+        "Product catalog, cart and checkout where needed",
+        "On-page SEO and analytics",
+        "Copy you can edit yourself",
+      ],
+      timeline: "1-2 weeks",
+      stack: "Next.js",
     },
   ],
 } as const satisfies ServicesContent;

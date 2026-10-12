@@ -45,7 +45,7 @@ export function Footer() {
         <RevealText text={`${site.wordmark.serif} ${site.wordmark.sans}`} className="font-extrabold tracking-[-0.06em]" stagger={0.04} />
       </div>
 
-      <Container className="flex items-center justify-between gap-6 border-t border-footer-line py-8 text-sm text-contour">
+      <Container className="flex items-center justify-between gap-6 border-t border-footer-line py-8 pr-24 text-sm text-contour md:pr-28">
         <p>{footer.copyright}</p>
         <Magnetic strength={0.4}>
           <a

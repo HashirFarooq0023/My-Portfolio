@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { ease } from "@/lib/motion";
 
-// Static, deterministic "loss landscape" contours: wobbly closed rings around two minima.
+// Site-wide fixed background. Static, deterministic "loss landscape" contours: wobbly closed rings around two minima.
 function ring(cx: number, cy: number, r: number, seed: number): string {
   const pts = Array.from({ length: 48 }, (_, i) => {
     const a = (i / 48) * Math.PI * 2;
@@ -21,14 +21,14 @@ const paths = [
 export function ContourField() {
   const reduce = useReducedMotion();
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, -300]);
+  const y = useTransform(scrollY, [0, 6000], [0, -240]);
 
   return (
     <motion.svg
       aria-hidden="true"
       viewBox="0 0 1440 900"
       preserveAspectRatio="xMidYMid slice"
-      className="pointer-events-none absolute inset-0 size-full opacity-60"
+      className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[calc(100svh+240px)] w-full opacity-60"
       style={reduce ? undefined : { y }}
     >
       {paths.map((d, i) => (

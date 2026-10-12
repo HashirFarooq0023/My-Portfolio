@@ -18,6 +18,7 @@ export interface SiteContent {
   bookCall: LinkItem;
   menu: { open: string; close: string };
   social: { github: string; linkedin: string; instagram: string };
+  fab: { open: string; close: string };
 }
 
 export interface HeroContent {
@@ -30,8 +31,18 @@ export interface HeroContent {
   portrait: ImageAsset;
 }
 
+export interface ExperienceItem { role: string; org: string; detail: string }
+
 export interface AboutSectionContent extends SectionMeta {
   statement: string;
+  statementLabel: string;
+  snapshotTitle: string;
+  snapshot: readonly { label: string; value: string }[];
+  statusLabel: string;
+  bioTitle: string;
+  experienceTitle: string;
+  experience: readonly ExperienceItem[];
+  offClockTitle: string;
   skillsTitle: string;
   skillsHint: string;
   skillLabels: Record<keyof AboutSkills, string>;
@@ -67,7 +78,6 @@ export interface ProjectsSectionContent extends SectionMeta {
   typeLabels: Record<ProjectCategory, string>;
   featuredLabel: string;
   openLabel: string;
-  newTabHint: string;
   liveLabel: string;
   codeLabel: string;
   allProjects: string;

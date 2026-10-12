@@ -29,6 +29,7 @@ export const site = {
   bookCall: { label: "Book a call", href: "/#contact" },
   menu: { open: "Open menu", close: "Close menu" },
   social: { github: "GitHub", linkedin: "LinkedIn", instagram: "Instagram" },
+  fab: { open: "Show social links", close: "Hide social links" },
 } as const satisfies SiteContent;
 
 export const hero = {
@@ -58,7 +59,6 @@ export const projectsSection = {
   typeLabels: { ai: "AI system", fullstack: "Web app", frontend: "Website" },
   featuredLabel: "Featured",
   openLabel: "View project details:",
-  newTabHint: "(opens in a new tab)",
   liveLabel: "Live site",
   codeLabel: "Code",
   allProjects: "All projects on GitHub",
@@ -80,6 +80,22 @@ export const aboutSection = {
   label: "About",
   headline: { serif: "Engineer first.", sans: "Builder by habit." },
   statement: aboutContent.tagline,
+  statementLabel: "In one line",
+  snapshotTitle: "Snapshot",
+  snapshot: [
+    { label: "Role", value: aboutContent.title },
+    { label: "Based in", value: `${aboutContent.location}, PKT (UTC+5)` },
+    { label: "Studying", value: "BS Artificial Intelligence" },
+  ],
+  statusLabel: "Available for new projects",
+  bioTitle: "The short version",
+  experienceTitle: "Experience",
+  experience: [
+    { role: "AI Remote Internship Program", org: "Arbisoft", detail: "Agentic AI, MCP and multi-tool orchestration" },
+    { role: "AI Developer Intern", org: "Sybrid, Innovation Division", detail: "Document automation and local LLMs" },
+    { role: "Graphic Designer", org: "1.5 years", detail: "UI, branding and visual design" },
+  ],
+  offClockTitle: "Off the clock",
   skillsTitle: "Toolkit",
   skillsHint: "The tools I reach for every week.",
   skillLabels: {

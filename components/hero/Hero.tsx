@@ -5,7 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealText } from "@/components/ui/RevealText";
-import { ContourField } from "./ContourField";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { HeroPortrait } from "./HeroPortrait";
 import { VisorBand } from "./VisorBand";
 
@@ -13,18 +13,21 @@ import { VisorBand } from "./VisorBand";
 export function Hero() {
   return (
     <section id="top" className="relative flex min-h-svh flex-col overflow-hidden pt-18 md:pt-20">
-      <ContourField />
       <Container className="relative flex flex-1 flex-col justify-between gap-6 pb-4 pt-4 md:gap-8 md:pt-6">
         <Reveal onLoad delay={0.1} y={12}>
-          <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-4 text-sm font-medium">
+          <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-3 text-sm font-medium">
             <span>{hero.meta.role}</span>
             <span className="text-graphite">{hero.meta.location}</span>
-            <span className="flex items-center gap-2.5">
+            <span className="flex w-full items-center justify-between gap-5 sm:w-auto">
+              <span className="flex items-center gap-2.5">
               <span className="relative flex size-2.5" aria-hidden="true">
                 <span className="absolute inset-0 animate-ping rounded-full bg-signal opacity-60 motion-reduce:hidden" />
                 <span className="relative size-2.5 rounded-full bg-signal" />
               </span>
               {hero.meta.availability}
+              </span>
+              <span aria-hidden="true" className="hidden h-5 w-px bg-contour sm:block" />
+              <SocialLinks size="sm" className="[&_a]:border-contour [&_a:hover]:border-ink" />
             </span>
           </div>
         </Reveal>

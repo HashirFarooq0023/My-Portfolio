@@ -26,6 +26,13 @@ import digi2 from "./images/projects/digisinc/2.png";
 import digi3 from "./images/projects/digisinc/3.png";
 import digi4 from "./images/projects/digisinc/4.png";
 import digi5 from "./images/projects/digisinc/5.png";
+import recipe1 from "./images/projects/Recipe web app/1.png";
+import recipe2 from "./images/projects/Recipe web app/2.png";
+import recipe3 from "./images/projects/Recipe web app/3.png";
+import hijabHome from "./images/projects/hijab store/home page.png";
+import hijabCatalog from "./images/projects/hijab store/hijab page.png";
+import hijabProduct from "./images/projects/hijab store/single paghe.png";
+import hijabCart from "./images/projects/hijab store/cart.png";
 
 export interface Project {
   id: string;
@@ -244,6 +251,11 @@ export const projects: Project[] = [
       "Your own recipes: client-side forms with strict validation and local saving.",
       "State and tests: favourites in React Context, with unit tests on the components.",
     ],
+    gallery: [
+      { src: recipe3, alt: "Recipe Box search page with a grid of seafood recipes" },
+      { src: recipe1, alt: "Recipe detail page with ingredients at a glance" },
+      { src: recipe2, alt: "Add a recipe form with name, category, image and ingredients" },
+    ],
   },
   {
     id: "digisinc-website",
@@ -281,6 +293,12 @@ export const projects: Project[] = [
     keyFeatures: [
       "Custom shop layouts: catalog pages, product bundles, cart and checkout.",
       "Hand-tuned styling: custom PHP and HTML for an interactive storefront.",
+    ],
+    gallery: [
+      { src: hijabHome, alt: "Hijab Gallery home page with a campaign banner and models" },
+      { src: hijabCatalog, alt: "Hijabs catalog with fabric filters and price range" },
+      { src: hijabProduct, alt: "Single product page for a black georgette hijab" },
+      { src: hijabCart, alt: "Shopping cart with order summary" },
     ],
   },
 ];

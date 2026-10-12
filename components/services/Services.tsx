@@ -6,7 +6,7 @@ import { ServiceList } from "./ServiceList";
 
 export function Services() {
   return (
-    <Section id="services" className="bg-paper">
+    <Section id="services">
       <Container>
         <SectionHeading meta={services} />
         <ServiceList />

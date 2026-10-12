@@ -8,16 +8,18 @@ import type { ProjectCategory } from "@/lib/content/types";
 import { cn } from "@/lib/cn";
 import { ProjectCard } from "./ProjectCard";
 
-// Asymmetric rhythm that always completes a row: 7/5, then 5/7.
-const spans = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7"] as const;
+const byFeatured = (a: { featured?: boolean }, b: { featured?: boolean }) => Number(!!b.featured) - Number(!!a.featured);
 
+// Two flex-wrap tiers: media cards (two per row, an odd lead card spans full width and turns horizontal)
+// and compact text cards (three per row, last row grows to fill). No row ever leaves a gap.
 export function ProjectGrid() {
   const [active, setActive] = useState<string>(work.filters[0].id);
   const filter = work.filters.find((f) => f.id === active) ?? work.filters[0];
   const allowed: readonly ProjectCategory[] = filter.categories;
-  const items = projects
-    .filter((p) => allowed.includes(p.category))
-    .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
+  const items = projects.filter((p) => allowed.includes(p.category));
+  const media = items.filter((p) => p.gallery?.length).sort(byFeatured);
+  const compact = items.filter((p) => !p.gallery?.length).sort(byFeatured);
+  const leadFull = media.length % 2 === 1;
 
   return (
     <>
@@ -40,13 +42,35 @@ export function ProjectGrid() {
         ))}
       </div>
 
-      <motion.div layout className="grid grid-cols-1 gap-5 md:grid-cols-12 lg:gap-6">
-        <AnimatePresence mode="popLayout">
-          {items.map((p, i) => (
-            <ProjectCard key={p.id} project={p} index={i} className={spans[i % spans.length]} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {media.length > 0 && (
+        <motion.div layout className="flex flex-wrap gap-5">
+          <AnimatePresence mode="popLayout">
+            {media.map((p, i) => (
+              <ProjectCard
+                key={p.id}
+                project={p}
+                index={i}
+                className={cn("basis-full grow", !(leadFull && i === 0) && "md:basis-[calc(50%-0.625rem)]")}
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
+
+      {compact.length > 0 && (
+        <motion.div layout className={cn("flex flex-wrap gap-5", media.length > 0 && "mt-5")}>
+          <AnimatePresence mode="popLayout">
+            {compact.map((p, i) => (
+              <ProjectCard
+                key={p.id}
+                project={p}
+                index={media.length + i}
+                className="basis-full grow md:basis-[calc(50%-0.625rem)] lg:basis-[calc(33.333%-0.834rem)]"
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
     </>
   );
 }
