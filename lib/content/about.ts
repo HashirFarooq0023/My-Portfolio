@@ -38,7 +38,7 @@ export const aboutContent: AboutContent = {
     "I'm an AI engineer and full-stack developer from Pakistan, currently working toward a BS in Artificial Intelligence.",
     "I work where modern web development meets AI orchestration. I build multi-agent systems, wire up retrieval-augmented generation (RAG) pipelines, and write the APIs that connect clean Next.js front ends to LLM back ends.",
     "Most recently I completed Arbisoft's AI Remote Internship Program, going deep on agentic AI, the Model Context Protocol (MCP) and multi-tool orchestration. Before that I was an AI Developer Intern in Sybrid's Innovation Division, automating document processing and running local LLMs. I also spent 1.5 years as a graphic designer, which is where my eye for UI comes from.",
-    "Away from the IDE, I usually play PUBG and snooker often.",
+    "Away from the IDE, you'll usually find me playing PUBG or lining up a few frames of snooker.",
   ],
   skills: {
     languages: ["Python", "TypeScript"],

@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { howWeWork } from "@/lib/content/services";
 import { ease } from "@/lib/motion";
 import { cn } from "@/lib/cn";
+import { BentoTile } from "@/components/ui/BentoTile";
 
 const last = howWeWork.steps.length - 1;
 
@@ -87,15 +88,15 @@ export function ProcessNodes() {
                 />
               )}
             </span>
-            <div
-              className={cn(
-                "flex-1 rounded-card border p-6 transition-[background-color,border-color,translate] duration-500 ease-snap lg:w-full",
-                current ? "-translate-y-1 border-ink bg-paper" : "border-contour bg-transparent",
-              )}
-            >
-              <p className="text-sm font-medium text-graphite">{step.when}</p>
-              <h3 className="mt-2 text-xl font-bold tracking-tight">{step.title}</h3>
-              <p className="mt-2 text-graphite lg:mx-auto lg:max-w-[28ch]">{step.body}</p>
+            <div className="flex-1 lg:w-full">
+              <BentoTile active={current}>
+                <p className="flex items-center gap-2.5 text-sm font-medium text-graphite lg:justify-center">
+                  <span aria-hidden="true" className={cn("size-1.5 rounded-full transition-colors duration-500", current ? "bg-volt ring-1 ring-ink" : "bg-ink")} />
+                  {step.when}
+                </p>
+                <h3 className="mt-4 text-xl font-bold tracking-tight">{step.title}</h3>
+                <p className="mt-2 leading-relaxed text-graphite lg:mx-auto lg:max-w-[28ch]">{step.body}</p>
+              </BentoTile>
             </div>
           </motion.li>
         );

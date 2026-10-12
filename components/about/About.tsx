@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WordsReveal } from "@/components/ui/WordsReveal";
 import { TechLabel } from "@/components/ui/TechLabel";
-import { BentoTile } from "./BentoTile";
+import { BentoTile } from "@/components/ui/BentoTile";
 import { Kicker } from "./Kicker";
 
 const skillKeys = Object.keys(a.skillLabels) as (keyof AboutSkills)[];

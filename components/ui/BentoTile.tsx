@@ -8,6 +8,7 @@ interface BentoTileProps {
   children: ReactNode;
   className?: string;
   tone?: "glass" | "ink" | "fog";
+  active?: boolean;
 }
 
 const tones = {
@@ -17,7 +18,7 @@ const tones = {
 } as const;
 
 // Glass tile with a pointer-following glow, a soft lift and a deeper shadow on hover.
-export function BentoTile({ children, className, tone = "glass" }: BentoTileProps) {
+export function BentoTile({ children, className, tone = "glass", active = false }: BentoTileProps) {
   const reduce = useReducedMotion();
   const x = useMotionValue(-400);
   const y = useMotionValue(-400);
@@ -36,7 +37,7 @@ export function BentoTile({ children, className, tone = "glass" }: BentoTileProp
       className={cn(
         "group/tile relative isolate h-full overflow-hidden rounded-card border p-7 backdrop-blur-md md:p-8",
         "transition-[translate,border-color,box-shadow] duration-500 ease-snap hover:-translate-y-1 hover:shadow-2xl",
-        tones[tone],
+        active ? "-translate-y-1 border-ink/30 bg-paper/90 shadow-2xl shadow-ink/10" : tones[tone],
         className,
       )}
     >

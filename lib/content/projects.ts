@@ -60,7 +60,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ahmedjavedcodes/fleet",
     role: "AI Engineer & Full Stack Developer",
     featured: true,
-    techStack: ["Next.js", "FastAPI", "PostgreSQL", "SQLAlchemy", "LangChain", "LangGraph", "Groq", "Pinecone"],
+    techStack: ["LangGraph", "LangChain", "Next.js", "FastAPI", "PostgreSQL", "SQLAlchemy", "Groq", "Pinecone"],
     keyFeatures: [
       "Multi-agent orchestration: LangGraph and LangChain route each request to the right specialist agent.",
       "Hybrid RAG: dense and semantic search with re-rankers, scored by an LLM-as-a-judge.",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ahmedjavedcodes/SpecForge",
     role: "AI Engineer",
     featured: true,
-    techStack: ["Python", "Groq", "MCP (Model Context Protocol)", "Multi-Agent Systems"],
+    techStack: ["Python", "LangGraph", "Groq", "MCP (Model Context Protocol)", "Multi-Agent Systems"],
     keyFeatures: [
       "Multi-agent MCP server: a custom Model Context Protocol server on Groq that coordinates several sub-agents.",
       "Automatic planning: drafts a detailed plan.md for each feature before any code is written.",
@@ -180,8 +180,8 @@ export const projects: Project[] = [
       "Polished front end: App Router, custom components and unit tests.",
     ],
     gallery: [
-      { src: bakersHome, alt: "The Baker's Inn home page with product categories and featured cakes" },
       { src: bakersProducts, alt: "All products page with category filters and search" },
+      { src: bakersHome, alt: "The Baker's Inn home page with product categories and featured cakes" },
       { src: bakersCart, alt: "Cart page with order summary and invoice ready to send" },
       { src: bakersDashboard, alt: "Owner dashboard linking to categories, products and team" },
       { src: bakersCatalog, alt: "Admin product list with edit and remove actions" },
