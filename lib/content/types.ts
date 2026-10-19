@@ -42,7 +42,7 @@ export interface HeroContent {
 
 export interface ExperienceItem { role: string; org: string; detail: string }
 
-export interface OffClockItem { label: string; body: string }
+export interface OffClockItem { id: "pubg" | "snooker"; label: string }
 
 export interface AboutSectionContent extends SectionMeta {
   statement: string;

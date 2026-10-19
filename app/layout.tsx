@@ -4,7 +4,7 @@ import { aboutContent } from "@/lib/content/about";
 import { site } from "@/lib/content/site";
 import { siteUrl } from "@/lib/siteUrl";
 import { theme } from "@/lib/theme";
-import { ContourField } from "@/components/hero/ContourField";
+import { ContourField } from "@/components/background/ContourField";
 import { SocialFab } from "@/components/layout/SocialFab";
 import "./globals.css";
 
@@ -41,9 +41,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang={site.lang} className={`${instrumentSerif.variable} ${archivo.variable}`}>
       <body className="relative font-sans text-ink antialiased">
-        <ContourField />
-        {children}
-        <SocialFab />
+        <ContourField className="fixed inset-0 z-0" />
+        <div className="relative z-10">
+          {children}
+          <SocialFab />
+        </div>
       </body>
     </html>
   );

@@ -104,16 +104,16 @@ export const aboutSection = {
   offClockIntro:
     "Good software engineering requires focus, strategy, and problem-solving traits that tend to follow me into my downtime. When I step away from the screen, I like to keep those skills sharp in different ways:",
   offClock: [
-    { label: "PUBG", body: "A great way to unwind while coordinating with squadmates, reacting under pressure, and thinking two steps ahead." },
-    { label: "Snooker", body: "A game of absolute patience and geometry. Lining up frames is my favorite way to slow down, focus on precision, and enjoy a classic challenge." },
+    { id: "pubg", label: "PUBG" },
+    { id: "snooker", label: "Snooker" },
   ],
   skillsTitle: "Toolkit",
   skillsHint: "The tools I reach for every week.",
   skillLabels: {
     languages: "Languages",
+    ai_data: "AI tooling",
     frontend: "Frontend",
     backend: "Backend",
-    ai_data: "AI tooling",
     vector_search: "Vector search",
     devops_tools: "DevOps & tools",
   },

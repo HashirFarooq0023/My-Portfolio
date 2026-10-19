@@ -14,10 +14,6 @@ import { VisorBand } from "./VisorBand";
 export function Hero() {
   return (
     <section id="top" className="relative flex min-h-svh flex-col overflow-hidden pt-18 md:pt-20">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_50%,var(--color-chalk)_30%,transparent_100%)]"
-      />
       <Container className="relative flex flex-1 flex-col pb-[clamp(0.75rem,2svh,1.25rem)] pt-[clamp(0.5rem,1.5svh,1.5rem)]">
         <Reveal onLoad delay={0.05} y={12}>
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-contour pb-3 text-sm font-medium">
