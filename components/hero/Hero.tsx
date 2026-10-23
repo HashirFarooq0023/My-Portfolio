@@ -63,7 +63,7 @@ export function Hero() {
           </Reveal>
         </div>
       </Container>
-      <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 -translate-x-1/2 md:bottom-12 lg:bottom-14">
+      <div className="pointer-events-none absolute bottom-5 left-1/2 z-10 -translate-x-1/2 sm:bottom-8 md:bottom-12 lg:bottom-14">
         <HeroPortrait />
       </div>
       <div className="relative z-20">

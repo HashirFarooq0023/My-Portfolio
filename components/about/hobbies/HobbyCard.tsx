@@ -48,9 +48,9 @@ export function HobbyCard({ item, index }: HobbyCardProps) {
       <div className={cn("relative aspect-[16/11] overflow-hidden rounded-[0.875rem] ring-1 ring-inset", v.frame)}>
         <v.Art className="absolute inset-0 size-full" />
       </div>
-      <div className="flex items-end justify-between gap-4 px-2">
-        <h4 className="text-[clamp(1.75rem,2.6vw,2.5rem)] font-extrabold leading-none tracking-[-0.03em]">{item.label}</h4>
-        <span className={cn("font-serif text-3xl italic leading-none transition-colors duration-500", v.num)}>
+      <div className="flex items-end justify-between gap-3 px-1 sm:px-2">
+        <h4 className="text-[clamp(1.5rem,2.6vw,2.5rem)] font-extrabold leading-none tracking-[-0.03em]">{item.label}</h4>
+        <span className={cn("font-serif text-2xl sm:text-3xl italic leading-none transition-colors duration-500", v.num)}>
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>

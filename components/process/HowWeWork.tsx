@@ -6,7 +6,7 @@ import { ProcessNodes } from "./ProcessNodes";
 
 export function HowWeWork() {
   return (
-    <Section id="work">
+    <Section id="work" className="overflow-hidden">
       <Container>
         <SectionHeading meta={howWeWork} />
         <ProcessNodes />

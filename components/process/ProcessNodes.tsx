@@ -25,8 +25,8 @@ export function ProcessNodes() {
       onMouseLeave={() => setActive(last)}
     >
       {/* rail: horizontal on desktop, vertical on mobile */}
-      <span aria-hidden="true" className="absolute left-7 top-7 bottom-7 w-px bg-contour lg:inset-x-[12.5%] lg:bottom-auto lg:h-px lg:w-auto" />
-      <span aria-hidden="true" className="absolute left-7 top-7 bottom-7 w-px lg:inset-x-[12.5%] lg:bottom-auto lg:h-px lg:w-auto">
+      <span aria-hidden="true" className="absolute left-6 top-6 bottom-6 w-px bg-contour sm:left-7 sm:top-7 sm:bottom-7 lg:inset-x-[12.5%] lg:bottom-auto lg:h-px lg:w-auto" />
+      <span aria-hidden="true" className="absolute left-6 top-6 bottom-6 w-px sm:left-7 sm:top-7 sm:bottom-7 lg:inset-x-[12.5%] lg:bottom-auto lg:h-px lg:w-auto">
         <motion.span
           className="absolute inset-0 hidden origin-left bg-ink lg:block"
           initial={{ scaleX: 0 }}
@@ -47,7 +47,7 @@ export function ProcessNodes() {
               transition={{ duration: 3.2, ease: ease.glide, repeat: Infinity, repeatDelay: 0.8 }}
             />
             <motion.span
-              className="absolute -left-1 size-2.5 -translate-y-1/2 rounded-full bg-volt ring-2 ring-ink lg:hidden"
+              className="absolute -left-1 size-2 -translate-y-1/2 rounded-full bg-volt ring-2 ring-ink sm:size-2.5 lg:hidden"
               animate={{ top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
               transition={{ duration: 3.2, ease: ease.glide, repeat: Infinity, repeatDelay: 0.8 }}
             />
@@ -64,7 +64,7 @@ export function ProcessNodes() {
             tabIndex={0}
             onMouseEnter={() => setActive(i)}
             onFocus={() => setActive(i)}
-            className="group relative flex gap-6 outline-none lg:flex-col lg:items-center lg:gap-8 lg:px-3 lg:text-center"
+            className="group relative flex gap-4 sm:gap-6 outline-none lg:flex-col lg:items-center lg:gap-8 lg:px-3 lg:text-center"
             initial={{ opacity: 0, y: reduce ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -72,8 +72,8 @@ export function ProcessNodes() {
           >
             <span
               className={cn(
-                "relative z-10 grid size-14 shrink-0 place-items-center rounded-full border-[1.5px] font-serif text-2xl transition-[background-color,border-color,color,scale] duration-500 ease-snap",
-                current ? "scale-110 border-ink bg-volt text-ink" : reached ? "border-ink bg-ink text-chalk" : "border-contour bg-chalk text-graphite",
+                "relative z-10 grid size-12 sm:size-14 shrink-0 place-items-center rounded-full border-[1.5px] font-serif text-xl sm:text-2xl transition-[background-color,border-color,color,scale] duration-500 ease-snap",
+                current ? "scale-105 sm:scale-110 border-ink bg-volt text-ink" : reached ? "border-ink bg-ink text-chalk" : "border-contour bg-chalk text-graphite",
                 "group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-ink",
               )}
             >
@@ -88,14 +88,14 @@ export function ProcessNodes() {
                 />
               )}
             </span>
-            <div className="flex-1 lg:w-full">
-              <BentoTile active={current}>
+            <div className="min-w-0 flex-1 lg:w-full">
+              <BentoTile active={current} className="p-5 sm:p-7 md:p-8">
                 <p className="flex items-center gap-2.5 text-sm font-medium text-graphite lg:justify-center">
                   <span aria-hidden="true" className={cn("size-1.5 rounded-full transition-colors duration-500", current ? "bg-volt ring-1 ring-ink" : "bg-ink")} />
                   {step.when}
                 </p>
-                <h3 className="mt-4 text-xl font-bold tracking-tight">{step.title}</h3>
-                <p className="mt-2 leading-relaxed text-graphite lg:mx-auto lg:max-w-[28ch]">{step.body}</p>
+                <h3 className="mt-3 text-lg font-bold tracking-tight sm:mt-4 sm:text-xl">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-graphite sm:text-base lg:mx-auto lg:max-w-[28ch]">{step.body}</p>
               </BentoTile>
             </div>
           </motion.li>

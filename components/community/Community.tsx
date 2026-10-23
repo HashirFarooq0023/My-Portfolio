@@ -47,8 +47,8 @@ export function Community() {
               if (!post || !post.authorAvatar?.src) return null;
               return (
                 <Reveal key={post.id} delay={idx * 0.08}>
-                <BentoTile className="overflow-hidden p-6 md:p-10">
-                  <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+                <BentoTile className="overflow-hidden p-5 sm:p-7 md:p-10">
+                  <div className="grid grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
                     {/* Left: LinkedIn Post Narrative */}
                     <div className="col-span-12 lg:col-span-6 flex flex-col justify-between space-y-6">
                       {/* Author Header */}

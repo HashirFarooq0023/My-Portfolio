@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { hero } from "@/lib/content/site";
 
-// Full-sized cutout portrait centered in the hero, rising from the bottom
-// and framed between the first and last name, matching the reference editorial layout.
+// Cutout portrait centered in the hero, rising from the bottom
+// Framed neatly between the first and last name, scaled down on mobile devices for clear layout.
 export function HeroPortrait() {
   return (
-    <div className="relative aspect-square h-[clamp(24rem,72svh,50rem)] w-auto shrink-0 select-none">
+    <div className="relative aspect-square h-[clamp(14rem,44svh,21rem)] w-auto shrink-0 select-none sm:h-[clamp(20rem,58svh,32rem)] md:h-[clamp(24rem,72svh,50rem)]">
       <div className="absolute inset-0 block animate-settle motion-reduce:animate-none">
         <Image
           src={hero.portrait.src}
@@ -13,7 +13,7 @@ export function HeroPortrait() {
           fill
           priority
           fetchPriority="high"
-          sizes="(min-width: 1024px) 38vw, 75vw"
+          sizes="(max-width: 640px) 65vw, (max-width: 1024px) 50vw, 38vw"
           className="object-contain object-bottom drop-shadow-2xl"
         />
       </div>

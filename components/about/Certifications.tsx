@@ -25,7 +25,7 @@ export function Certifications() {
 
   return (
     <>
-      <BentoTile className="md:p-8">
+      <BentoTile className="p-5 sm:p-6 md:p-8">
         <div className="flex flex-wrap items-baseline justify-between gap-3">
           <div className="space-y-1">
             <Kicker>{a.certificationsKicker}</Kicker>
@@ -34,13 +34,13 @@ export function Certifications() {
           <p className="text-sm text-graphite">{a.certificationsHint}</p>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {a.certifications.map((item) => {
             const c = item as CertificationItem;
             return (
               <div
                 key={c.id}
-                className="group/cert relative flex flex-col justify-between overflow-hidden rounded-panel border border-ink/10 bg-chalk/60 p-5 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-ink hover:bg-paper"
+                className="group/cert relative flex flex-col justify-between overflow-hidden rounded-panel border border-ink/10 bg-chalk/60 p-4 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-ink hover:bg-paper sm:p-5"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
