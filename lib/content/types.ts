@@ -42,7 +42,18 @@ export interface HeroContent {
 
 export interface ExperienceItem { role: string; org: string; detail: string }
 
-export interface OffClockItem { id: "pubg" | "snooker"; label: string }
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  detail: string;
+  skills: readonly string[];
+  credentialUrl?: string;
+  image?: ImageAsset;
+}
+
+export interface OffClockItem { id: "gaming" | "chess" | "pubg" | "snooker"; label: string }
 
 export interface AboutSectionContent extends SectionMeta {
   statement: string;
@@ -53,6 +64,13 @@ export interface AboutSectionContent extends SectionMeta {
   bioTitle: string;
   experienceTitle: string;
   experience: readonly ExperienceItem[];
+  certificationsTitle: string;
+  certificationsKicker: string;
+  certificationsHint: string;
+  verifyCredentialLabel: string;
+  viewCertificateLabel: string;
+  closeModalLabel: string;
+  certifications: readonly CertificationItem[];
   offClockTitle: string;
   offClockIntro: string;
   offClock: readonly OffClockItem[];
@@ -81,6 +99,30 @@ export interface ProcessStep { title: string; when: string; body: string }
 
 export interface ProcessContent extends SectionMeta {
   steps: readonly ProcessStep[];
+}
+
+export interface CommunityPostContent {
+  id: string;
+  authorName: string;
+  authorRole: string;
+  authorAvatar: ImageAsset;
+  publishedDate: string;
+  postUrl: string;
+  contentLines: readonly string[];
+  tags: readonly string[];
+  postImage: ImageAsset;
+  secondaryImage?: ImageAsset;
+  viewOnLinkedInLabel: string;
+  openLightboxLabel: string;
+  closeLightboxLabel: string;
+  certificateBadge: string;
+  verifiedLabel: string;
+  cardKicker: string;
+}
+
+export interface CommunitySectionContent extends SectionMeta {
+  post: CommunityPostContent;
+  posts: readonly CommunityPostContent[];
 }
 
 export interface WorkFilter { id: string; label: string; categories: readonly ProjectCategory[] }

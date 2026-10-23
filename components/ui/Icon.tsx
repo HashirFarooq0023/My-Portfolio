@@ -19,7 +19,11 @@ export type IconName =
   | "scan"
   | "layers"
   | "code"
-  | "loop";
+  | "loop"
+  | "award"
+  | "shield"
+  | "check"
+  | "external";
 
 interface IconProps {
   name: IconName;
@@ -52,6 +56,10 @@ const stroked: Partial<Record<IconName, string>> = {
   layers: "M12 3 2 8l10 5 10-5-10-5zM2 16l10 5 10-5M2 12l10 5 10-5",
   code: "M8 6l-6 6 6 6M16 6l6 6-6 6",
   loop: "M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4",
+  award: "M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM8.21 13.89 7 23l5-3 5 3-1.21-9.11",
+  shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+  check: "M20 6 9 17l-5-5",
+  external: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3",
 };
 
 export function Icon({ name, className }: IconProps) {

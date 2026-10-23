@@ -18,6 +18,8 @@ interface ProjectPageProps {
   params: Promise<{ id: string }>;
 }
 
+export const instant = false;
+
 export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }));
 }

@@ -32,21 +32,21 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <div className="flex flex-1 items-center py-[clamp(0.5rem,2.5svh,1.75rem)]">
-          <h1 className="w-full">
-            <RevealText onLoad delay={0.1} text={hero.name.serif} className="text-hero-serif max-sm:text-[24vw]" />
-            <span className="text-hero-sans max-sm:text-[19vw] mt-[0.06em] flex items-center justify-end gap-[0.12em] sm:mt-[0.14em]">
-              <HeroPortrait />
-              <RevealText onLoad delay={0.2} text={hero.name.sans} />
-            </span>
+        <div className="relative flex flex-1 items-center py-[clamp(0.5rem,2.5svh,1.75rem)]">
+          <h1 className="relative z-0 flex w-full flex-col md:flex-row md:items-baseline md:justify-between">
+            <RevealText onLoad delay={0.1} text={hero.name.serif} className="text-hero-serif max-sm:text-[22vw]" />
+            <RevealText onLoad delay={0.2} text={hero.name.sans} className="text-hero-sans text-right max-sm:text-[19vw]" />
           </h1>
         </div>
 
-        <div className="grid grid-cols-12 items-center gap-x-6 gap-y-3 border-t border-contour pt-[clamp(0.75rem,2svh,1.25rem)] md:gap-y-5">
-          <Reveal onLoad delay={0.35} className="col-span-12 md:col-span-6 lg:col-span-5">
-            <p className="max-w-[34ch] text-lead max-sm:text-xl">{hero.lead}</p>
+        <div className="relative z-20 grid grid-cols-12 items-center gap-x-6 gap-y-3 pt-[clamp(0.75rem,2svh,1.25rem)] md:gap-y-5">
+          <Reveal onLoad delay={0.35} className="col-span-12 md:col-span-5 lg:col-span-5">
+            <div className="border-t border-contour pt-3 md:pt-4">
+              <p className="max-w-[34ch] text-lead max-sm:text-xl">{hero.lead}</p>
+            </div>
           </Reveal>
-          <Reveal onLoad delay={0.45} className="col-span-12 flex flex-wrap items-center gap-2 sm:gap-3 md:col-span-6 md:justify-end md:gap-4 lg:col-span-7">
+          <div className="hidden md:block md:col-span-2 lg:col-span-2" aria-hidden="true" />
+          <Reveal onLoad delay={0.45} className="col-span-12 flex flex-wrap items-center gap-2 sm:gap-3 md:col-span-5 md:justify-end md:gap-4 lg:col-span-5">
             <Button href={site.bookCall.href} icon="calendar">{site.bookCall.label}</Button>
             <Button href={hero.secondaryCta.href} variant="secondary">{hero.secondaryCta.label}</Button>
             <div className="hidden lg:block">
@@ -63,7 +63,12 @@ export function Hero() {
           </Reveal>
         </div>
       </Container>
-      <VisorBand />
+      <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 -translate-x-1/2 md:bottom-12 lg:bottom-14">
+        <HeroPortrait />
+      </div>
+      <div className="relative z-20">
+        <VisorBand />
+      </div>
     </section>
   );
 }

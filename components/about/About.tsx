@@ -9,6 +9,7 @@ import { TechLabel } from "@/components/ui/TechLabel";
 import { BentoTile } from "@/components/ui/BentoTile";
 import { Kicker } from "./Kicker";
 import { OffTheClock } from "./OffTheClock";
+import { Certifications } from "./Certifications";
 
 const skillKeys = Object.keys(a.skillLabels) as (keyof AboutSkills)[];
 
@@ -75,6 +76,10 @@ export function About() {
                 ))}
               </ol>
             </BentoTile>
+          </Reveal>
+
+          <Reveal className="col-span-12">
+            <Certifications />
           </Reveal>
 
           <Reveal className="col-span-12">

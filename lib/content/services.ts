@@ -64,7 +64,7 @@ export const services = {
 } as const satisfies ServicesContent;
 
 export const howWeWork = {
-  index: "04",
+  index: "05",
   label: "Work",
   headline: { serif: "How we'll work together.", sans: "Four steps. No surprises." },
   steps: [

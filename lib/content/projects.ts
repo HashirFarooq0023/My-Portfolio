@@ -1,38 +1,26 @@
 // lib/content/projects.ts
 import type { ImageAsset } from "./types";
 
-import fleet1 from "./images/projects/fleet/1.png";
-import fleet2 from "./images/projects/fleet/2.png";
-import fleet3 from "./images/projects/fleet/3.png";
-import fleet4 from "./images/projects/fleet/4.png";
-import bakersHome from "./images/projects/thebakersinn/home.png";
-import bakersProducts from "./images/projects/thebakersinn/user-products.png";
-import bakersCart from "./images/projects/thebakersinn/cart.png";
-import bakersDashboard from "./images/projects/thebakersinn/owner dashboard.png";
-import bakersCatalog from "./images/projects/thebakersinn/products.png";
-import bakersCategories from "./images/projects/thebakersinn/categories.png";
-import bakersTeam from "./images/projects/thebakersinn/team.png";
-import eatHome from "./images/projects/eatddelight/home.png";
-import eatMenu from "./images/projects/eatddelight/menu.png";
-import eatCustom from "./images/projects/eatddelight/custom.png";
-import eatCheckout from "./images/projects/eatddelight/checkout.png";
-import eatAdmin from "./images/projects/eatddelight/admin.png";
-import fyn1 from "./images/projects/fynrose/1.png";
-import fyn2 from "./images/projects/fynrose/2.png";
-import fyn3 from "./images/projects/fynrose/3.png";
-import fyn4 from "./images/projects/fynrose/4.png";
-import digi1 from "./images/projects/digisinc/1.png";
-import digi2 from "./images/projects/digisinc/2.png";
-import digi3 from "./images/projects/digisinc/3.png";
-import digi4 from "./images/projects/digisinc/4.png";
-import digi5 from "./images/projects/digisinc/5.png";
-import recipe1 from "./images/projects/Recipe web app/1.png";
-import recipe2 from "./images/projects/Recipe web app/2.png";
-import recipe3 from "./images/projects/Recipe web app/3.png";
-import hijabHome from "./images/projects/hijab store/home page.png";
-import hijabCatalog from "./images/projects/hijab store/hijab page.png";
-import hijabProduct from "./images/projects/hijab store/single paghe.png";
-import hijabCart from "./images/projects/hijab store/cart.png";
+import asanDashboard from "./images/AsanShipping/dashboard.png";
+import asanInventory from "./images/AsanShipping/inventoryu.png";
+import asanManual from "./images/AsanShipping/manual order.png";
+import asanSettings from "./images/AsanShipping/SETTINGS.png";
+
+import schoolhubDashboard from "./images/schoolhub_dashboard.jpg";
+import bizmanagerCover from "./images/bizmanager-cover.png";
+import bizmanagerDashboard from "./images/bizmanager_dashboard.jpg";
+import myportalCover from "./images/myportalucp-cover.png";
+import myportalDashboard from "./images/myportalucp_dashboard.jpg";
+import talentVectorCover from "./images/talentvector-cover.png";
+import autopostingDashboard from "./images/autoposting_dashboard.jpg";
+import psxQuantitativeCover from "./images/psx-analytics-cover.png";
+import psxChart from "./images/PPSM/chart.png";
+import psxPortfolio from "./images/PPSM/portfolio .png";
+
+import trendsMain from "./images/trendsstore/ecom main.png";
+import trendsAdmin from "./images/trendsstore/admin portal .png";
+import trendsProduct from "./images/trendsstore/product page.png";
+import trendsCheckout from "./images/trendsstore/cehckoutpage .png";
 
 export interface Project {
   id: string;
@@ -49,256 +37,232 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ==================== AI & AGENTIC PROJECTS ====================
+  // ==================== ASANSHIPPING (FYP FLAGSHIP) ====================
   {
-    id: "fleet-management-saas",
-    title: "Autonomous Fleet Management SaaS",
-    category: "ai",
+    id: "asanshipping",
+    title: "AsanShipping",
+    category: "fullstack",
     shortDescription:
-      "A fleet management SaaS where AI agents triage vehicles, answer questions about the fleet and keep logistics moving.",
-    liveUrl: "https://fleet-inky.vercel.app",
-    githubUrl: "https://github.com/ahmedjavedcodes/fleet",
-    role: "AI Engineer & Full Stack Developer",
+      "Pakistan's premier AI-driven autonomous logistics control tower. Eliminates COD RTO friction with automated WhatsApp verification, multi-courier routing (TCS, Trax, Leopards, PostEx, M&P), and reverse logistics.",
+    liveUrl: "https://www.asanshipping.com",
+    githubUrl: "https://github.com/MegaTrix-Technologies/AsanShipping-Landing",
+    role: "Founder & Full-Stack Architect",
     featured: true,
-    techStack: ["LangGraph", "LangChain", "Next.js", "FastAPI", "PostgreSQL", "SQLAlchemy", "Groq", "Pinecone"],
+    techStack: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express.js", "TypeScript", "Python", "FastAPI", "MongoDB", "WhatsApp Cloud API", "Redis"],
     keyFeatures: [
-      "Multi-agent orchestration: LangGraph and LangChain route each request to the right specialist agent.",
-      "Hybrid RAG: dense and semantic search with re-rankers, scored by an LLM-as-a-judge.",
-      "Safety hooks: input guardrails, semantic caching, query normalisation and role-aware chat before the model runs, with cache updates, alerts and evals after.",
-      "Vision triage: drivers upload photos and vision-capable models help diagnose the vehicle.",
-      "Real fleet roles: strict access control for admins, fleet managers, drivers and mechanics across five core operational problems.",
+      "Order lifecycle state machine: deterministic state engine tracking orders across Unverified, Confirmed, Booked, In-Transit, Delivered, and RTO stages.",
+      "Automated WhatsApp confirmation: interactive buttons and quick-replies sent via WhatsApp Cloud API allowing buyers to confirm or cancel orders in seconds.",
+      "Unified multi-courier booking: single-click booking across major regional couriers with automated shipping label generation and tracking numbers.",
+      "Intelligent courier routing: automated rule-based assignment matching parcel weight, destination city, and courier delivery success history.",
+      "Inventory & reverse logistics: real-time warehouse SKU deduction upon dispatch and automated restock workflows when returned packages are checked in.",
     ],
     gallery: [
-      { src: fleet1, alt: "Fleet insights dashboard with a fuel cost trend chart and an Ask AI search bar" },
-      { src: fleet2, alt: "Vehicle detail page showing maintenance overview, trip performance and a vehicle health score" },
-      { src: fleet3, alt: "Document library where fleet files are uploaded and searched by the RAG pipeline" },
-      { src: fleet4, alt: "AI assistant chat answering a question about fleet operations" },
-    ],
-  },
-  {
-    id: "specforge",
-    title: "SpecForge",
-    category: "ai",
-    shortDescription:
-      "A multi-agent MCP server on Groq that turns a feature idea into a plan and a spec your AI coding assistant can build from.",
-    githubUrl: "https://github.com/ahmedjavedcodes/SpecForge",
-    role: "AI Engineer",
-    featured: true,
-    techStack: ["Python", "LangGraph", "Groq", "MCP (Model Context Protocol)", "Multi-Agent Systems"],
-    keyFeatures: [
-      "Multi-agent MCP server: a custom Model Context Protocol server on Groq that coordinates several sub-agents.",
-      "Automatic planning: drafts a detailed plan.md for each feature before any code is written.",
-      "Built for AI assistants: specs are shaped for tools like Claude Code, so they can pick up the work directly.",
-      "Modern Python setup: packaged with pyproject.toml.",
-    ],
-  },
-  {
-    id: "research-agent",
-    title: "ReAct Research Agent",
-    category: "ai",
-    shortDescription:
-      "A ReAct agent for deep research, with live web search, file reading, memory and multi-hop reasoning.",
-    githubUrl: "https://github.com/ahmedjavedcodes/research-agent",
-    role: "AI Engineer",
-    featured: true,
-    techStack: ["Python", "ReAct Framework", "SerpAPI", "Execution Hooks"],
-    keyFeatures: [
-      "ReAct loop: the agent reasons, acts and checks its work across several hops.",
-      "Live web search: SerpAPI tools pull in fresh information as it researches.",
-      "Plugins and memory: file-reading plugins and persistent memory keep context between steps.",
-      "CLI: run it once from the command line or chat with it in an interactive REPL.",
-      "Tested: coverage across the parser, memory and tool execution.",
-    ],
-  },
-  {
-    id: "hydra-rag",
-    title: "Hydra RAG",
-    category: "ai",
-    shortDescription:
-      "Chat with your PDFs, Word files, spreadsheets and web pages in one place, with fast answers grounded in your own documents.",
-    role: "AI Engineer & Full Stack Developer",
-    featured: false,
-    techStack: ["LangChain", "Pinecone", "Groq", "Python", "FastAPI", "Next.js"],
-    keyFeatures: [
-      "Any format: PDFs, Word documents (.docx), Excel spreadsheets (.xlsx) and live URLs.",
-      "LangChain RAG: semantic search and context extraction for precise answers.",
-      "Pinecone index: dense embeddings with fast similarity search.",
-      "Groq inference: low-latency responses on LPU hardware.",
-    ],
-  },
-  {
-    id: "digisinc-chatbot",
-    title: "Digisinc AI Assistant",
-    category: "ai",
-    liveUrl: "https://digisinc.systems/chat",
-    shortDescription:
-      "A RAG assistant for Digisinc Marketing Agency that answers client questions with LangChain and Llama 3.1.",
-    githubUrl: "https://github.com/ahmedjavedcodes/Digisinc-chatbot",
-    role: "AI Engineer",
-    featured: false,
-    techStack: ["Python", "FastAPI", "LangChain", "Llama 3.1", "Pinecone", "Docker"],
-    keyFeatures: [
-      "Agency assistant: a RAG chatbot built around Digisinc's own services and content.",
-      "Accurate retrieval: LangChain and Llama 3.1 pull the right business context for each question.",
-      "Vector storage: Pinecone for fast semantic search.",
-      "FastAPI back end: quick, simple API endpoints.",
-      "Ready to ship: containerised with Docker, with a Procfile for deployment.",
-    ],
-  },
-  {
-    id: "sybrid-md-automation",
-    title: "Sybrid MD Automation",
-    category: "ai",
-    shortDescription:
-      "Turns messy medical documents into clean, structured data using OCR and the Gemini LLM.",
-    githubUrl: "https://github.com/ahmedjavedcodes/Sybrid-md-automation",
-    role: "AI Engineer",
-    featured: false,
-    techStack: ["Python", "Gemini LLM", "OCR (Optical Character Recognition)", "LM Studio", "Selenium"],
-    keyFeatures: [
-      "Medical records to data: extracts structured, usable fields from complex healthcare files.",
-      "OCR plus LLM: optical character recognition feeds Gemini for precise parsing.",
-      "Local models: LM Studio scripts for privacy-friendly testing on local LLMs.",
-      "Modular code: services, utilities and config kept separate so it scales cleanly.",
+      { src: asanDashboard, alt: "AsanShipping autonomous logistics control tower" },
+      { src: asanInventory, alt: "Inventory management and warehouse stock ledger" },
+      { src: asanManual, alt: "Manual order booking and normalization interface" },
+      { src: asanSettings, alt: "Courier API credentials and tenant settings" },
     ],
   },
 
-  // ==================== FULL STACK PROJECTS ====================
+  // ==================== MEGATRIX ECOSYSTEM PRODUCTS ====================
   {
-    id: "the-bakers-inn",
-    title: "The Baker's Inn",
+    id: "school-hub",
+    title: "School Hub",
     category: "fullstack",
     shortDescription:
-      "A full-stack bakery storefront with a Next.js shop, a FastAPI back end and an owner dashboard for products, categories and staff.",
-    githubUrl: "https://github.com/ahmedjavedcodes/thebakersinn_frontend",
-    role: "Full Stack Developer",
+      "Unified school management system by MegaTrix. One workspace for administration, teachers, and students handling attendance, examinations, timetable schedules, notices, and fee vouchers.",
+    liveUrl: "https://schoolhub.megatrixai.com",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "Full-Stack Developer (MegaTrix)",
     featured: true,
-    techStack: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "FastAPI", "PostgreSQL", "SQLAlchemy", "Pydantic"],
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Auth"],
     keyFeatures: [
-      "End-to-end store: a Next.js shop talking to a FastAPI back end.",
-      "Owner tools: secure admin login, role-based access and full catalog management with SQLAlchemy and Pydantic.",
-      "Polished front end: App Router, custom components and unit tests.",
+      "Multi-role portal hierarchy: dedicated dashboards tailored precisely to the daily responsibilities of admins, educators, students, and parents.",
+      "Attendance & daily absence tracking: one-click classroom attendance recording with automated monthly percentage summaries.",
+      "Fee management & voucher generation: automated monthly invoice calculation with customizable discounts, fines, and payment records.",
+      "Exam grading & report cards: teacher gradebook entry with automated GPA calculation and printable student progress reports.",
+      "Student & staff directories: comprehensive personnel profiles, emergency contact records, and enrollment histories.",
     ],
     gallery: [
-      { src: bakersCart, alt: "Cart page with order summary and invoice ready to send" },
-      { src: bakersProducts, alt: "All products page with category filters and search" },
-      { src: bakersHome, alt: "The Baker's Inn home page with product categories and featured cakes" },
-      { src: bakersDashboard, alt: "Owner dashboard linking to categories, products and team" },
-      { src: bakersCatalog, alt: "Admin product list with edit and remove actions" },
-      { src: bakersCategories, alt: "Admin categories page for creating and ordering product categories" },
-      { src: bakersTeam, alt: "Team page for inviting staff and managing access" },
+      { src: schoolhubDashboard, alt: "School Hub administrative portal overview" },
     ],
   },
   {
-    id: "eatddelight",
-    title: "EatDDelight",
+    id: "bizmanager",
+    title: "BizManager",
     category: "fullstack",
-    liveUrl: "https://eatddelight.com",
     shortDescription:
-      "An online store for a homemade kitchen brand, with a daily specials menu, custom orders, smooth animations and its own API.",
-    githubUrl: "https://github.com/ahmedjavedcodes/eatddelight_frontend",
-    role: "Full Stack Developer",
+      "Modern dual-language (Urdu & English) Point of Sale, real-time inventory management, customer udhaar khata, and daily net profit analytics for retail and wholesale businesses.",
+    liveUrl: "https://bizmanager.megatrixai.com",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "Full-Stack Developer (MegaTrix)",
     featured: true,
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Locomotive Scroll", "FastAPI", "PostgreSQL"],
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "Data Tables"],
     keyFeatures: [
-      "Custom storefront: catalog browsing, cart, checkout flow and tidy scroll handling.",
-      "Smooth and searchable: Locomotive Scroll animations and solid on-page SEO.",
-      "Own API: a separate FastAPI service for the catalog, accounts and cart.",
+      "Real-time stock depletion & alerts: instant inventory balance tracking with proactive warnings when popular items drop below safety thresholds.",
+      "Point of Sale (POS) billing: clean keyboard-friendly billing interface with thermal invoice printing and itemized tax handling.",
+      "Customer credit & debt ledger: comprehensive udhaar khata receivables history tracking customer credit, payments received, and overdue debt.",
+      "Supplier purchase order management: vendor invoice logging, payables tracking, and automated inventory replenishment on delivery.",
+      "Automated profit & loss analytics: real-time calculation of gross revenue, Cost of Goods Sold (COGS), operational expenses, and daily net profit.",
     ],
     gallery: [
-      { src: eatHome, alt: "EatDDelight home page with today's special and home-kitchen story" },
-      { src: eatMenu, alt: "A la carte menu with category filters" },
-      { src: eatCustom, alt: "Custom orders page with a three-step meal plan form" },
-      { src: eatCheckout, alt: "Checkout page with order summary and WhatsApp ordering" },
-      { src: eatAdmin, alt: "Admin panel for creating products" },
+      { src: bizmanagerCover, alt: "Supercharge your business with BizManager landing overview" },
+      { src: bizmanagerDashboard, alt: "BizManager sales and inventory management terminal" },
     ],
   },
   {
-    id: "fynrose",
-    title: "Fynrose",
-    category: "frontend",
-    liveUrl: "https://fynrose.shop",
-    shortDescription:
-      "A single-product showcase for a natural wellness brand, built to feel as calm and organic as the product.",
-    githubUrl: "https://github.com/ahmedjavedcodes/fynrose",
-    role: "Frontend Developer",
-    featured: false,
-    techStack: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "Smooth Scroll Context"],
-    keyFeatures: [
-      "On-brand design: custom layouts, brand assets and clean typography.",
-      "Smooth interactions: smooth-scroll handling and a floating header that fades with scroll.",
-      "Easy to edit: all brand copy lives in lib/content, separate from the code.",
-    ],
-    gallery: [
-      { src: fyn1, alt: "Fynrose hero section for the Herbal Skin Detox product" },
-      { src: fyn2, alt: "Ingredients section listing each herb and its benefit" },
-      { src: fyn3, alt: "Benefits section explaining how the product supports skin health" },
-      { src: fyn4, alt: "Customer reviews section" },
-    ],
-  },
-  {
-    id: "recipe-web-app",
-    title: "Recipe Discovery SPA",
+    id: "myportalucp",
+    title: "MyPortalUCP",
     category: "fullstack",
     shortDescription:
-      "A single-page app to search recipes, save favourites and create your own.",
-    githubUrl: "https://github.com/ahmedjavedcodes/Recipe-Web-App",
-    role: "Frontend Developer",
-    featured: false,
-    techStack: ["Next.js (App Router)", "JavaScript / React Context", "Tailwind CSS", "TheMealDB API"],
+      "The specialized student ecosystem for the University of Central Punjab, offering real-time academic notifications, past exam archives, end-to-end encrypted sync, and GPA/CGPA forecasting.",
+    liveUrl: "https://www.myportalucp.online",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "Creator & Lead Developer",
+    featured: true,
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose"],
     keyFeatures: [
-      "TheMealDB API: live recipe search with full details and instructions.",
-      "Your own recipes: client-side forms with strict validation and local saving.",
-      "State and tests: favourites in React Context, with unit tests on the components.",
+      "Categorized past exam papers archive: filterable repository of past midterm and final examination papers organized by course and semester.",
+      "Precision GPA / CGPA calculator: interactive calculator calibrated to exact UCP grading scale and credit hour weightings.",
+      "Course notes & study materials: downloadable slides, assignment references, and syllabus guides contributed by top students.",
+      "Community submissions: student upload interface allowing peer collaboration and content enrichment.",
+      "Mobile ecosystem: integrated with Android app downloads and responsive student views.",
     ],
     gallery: [
-      { src: recipe3, alt: "Recipe Box search page with a grid of seafood recipes" },
-      { src: recipe1, alt: "Recipe detail page with ingredients at a glance" },
-      { src: recipe2, alt: "Add a recipe form with name, category, image and ingredients" },
+      { src: myportalCover, alt: "MyPortal UCP specialized student ecosystem landing view" },
+      { src: myportalDashboard, alt: "MyPortalUCP academic archive and study resources" },
     ],
   },
+
+  // ==================== AI & MACHINE LEARNING ====================
   {
-    id: "digisinc-website",
-    title: "Digisinc Agency Website",
-    category: "frontend",
-    liveUrl: "https://digisinc.systems/",
+    id: "talent-vector",
+    title: "Talent Vector AI",
+    category: "ai",
     shortDescription:
-      "A bold agency site that shows off Digisinc's services, past work and pricing.",
-    githubUrl: "https://github.com/ahmedjavedcodes/Digisinc-website",
-    role: "Frontend Developer",
-    featured: false,
-    techStack: ["React", "JavaScript", "Tailwind CSS", "Vite"],
+      "Next-generation AI recruitment and talent acquisition platform utilizing neural matching, NLP tokenization, and vector embeddings for automated resume parsing and candidate ranking.",
+    liveUrl: "https://talentvector-xi.vercel.app",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "AI & Full-Stack Developer",
+    featured: true,
+    techStack: ["Python", "FastAPI", "NLP", "Scikit-Learn", "Cosine Similarity", "React", "Tailwind CSS", "MongoDB"],
     keyFeatures: [
-      "Service showcase: responsive layouts for services, testimonials and results.",
-      "SEO basics done right: meta tags and clean canonical URLs.",
+      "Automated resume parsing: extracts unstructured sections from PDF and DOCX resumes into structured JSON entities.",
+      "Semantic job fit scoring: computes contextual compatibility beyond exact keyword matches using neural vector similarity.",
+      "Skills gap identification: visual breakdown showing which required skills the candidate possesses and which are missing.",
+      "Dual portal access: dedicated interfaces for Recruiters and Job Seekers with seamless Google OAuth authentication.",
+      "Ranked candidate shortlist: sorts applicants objectively based on algorithmic fit scores for streamlined interview pipelines.",
     ],
     gallery: [
-      { src: digi1, alt: "Digisinc home page hero: The Performance Driven Agency" },
-      { src: digi2, alt: "Projects section showing web and app case studies" },
-      { src: digi3, alt: "Graphic design portfolio grid" },
-      { src: digi4, alt: "Pricing tiers for landing pages, websites and web apps" },
-      { src: digi5, alt: "Ask about Digisinc AI chat prompt" },
+      { src: talentVectorCover, alt: "Talent Vector next-generation talent acquisition portal" },
     ],
   },
   {
-    id: "hijab-store",
-    title: "Hijab Gallery Storefront",
+    id: "psx-prediction",
+    title: "PSX Quantitative Stock Analysis & Prediction",
+    category: "ai",
+    shortDescription:
+      "Quantitative financial analysis and machine learning forecasting platform for Pakistan Stock Exchange equities, featuring descriptive statistics, OLS regression mapping, and time-series momentum prediction.",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "ML Engineer & Developer (Probability & Statistics)",
+    featured: true,
+    techStack: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Time-Series Analysis", "OLS Regression", "React", "Tailwind CSS"],
+    keyFeatures: [
+      "Descriptive statistics summary: analyzes central tendency indices, mean, median, IQR, and dispersion distributions evaluated over 620 trading sessions.",
+      "OLS regression & correlation mapping: evaluates asset co-movement, risk-adjusted beta, and diversification evaluations across leading equities (MEBL, SYS, FFC, HUBC, NPL).",
+      "Historical PSX ticker analysis: ingestion and preprocessing of historical daily OHLCV trading data across leading PSX equities.",
+      "Technical indicator computation: automated extraction of RSI, MACD, 20/50-day moving averages, and volatility bands.",
+      "Supervised ML trend forecasting: machine learning models evaluating price direction probability based on lag feature matrices.",
+      "Quantitative benchmarking: visual comparison of predicted trajectories against actual market prices with RMSE and MAE statistics.",
+    ],
+    gallery: [
+      { src: psxQuantitativeCover, alt: "PSX Quantitative Stock Analysis and Descriptive Statistics Dashboard" },
+      { src: psxChart, alt: "PSX stock prediction charts and indicators" },
+    ],
+  },
+  {
+    id: "psx-portfolio-manager",
+    title: "Personal PSX Portfolio Manager",
+    category: "ai",
+    shortDescription:
+      "Personal investment management platform for tracking Pakistan Stock Exchange portfolios, cost-basis calculations, and LLM-assisted corporate disclosure insights.",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "AI & Full-Stack Developer",
+    featured: true,
+    techStack: ["Python", "FastAPI", "LLMs", "Prompt Engineering", "React", "Tailwind CSS"],
+    keyFeatures: [
+      "Realized & unrealized P&L tracking: real-time calculations of capital gains across individual stocks and aggregate portfolio holdings.",
+      "Sector exposure breakdown: visual allocation metrics helping maintain disciplined sector diversification.",
+      "LLM corporate filing summarizer: generates digestible summaries of quarterly financial earnings statements and director reports.",
+      "Trade & dividend ledger: complete historical log of buy/sell transactions, cash dividends, and portfolio cash balances.",
+    ],
+    gallery: [
+      { src: psxPortfolio, alt: "Personal PSX portfolio analytics dashboard" },
+    ],
+  },
+  {
+    id: "megatrix-ai-social",
+    title: "MegaTrix AI Social / AutoPosting",
+    category: "ai",
+    shortDescription:
+      "Autonomous social media pipeline integrating LLMs, Antigravity workflow automation, and Buffer MCP to discover tech topics, generate tailored copy, and publish automatically.",
+    liveUrl: "https://auto-posting-engine-web.vercel.app",
+    githubUrl: "https://github.com/MegaTrix-Technologies/AutoPostingEngine-Web",
+    role: "AI & Automation Engineer",
+    featured: true,
+    techStack: ["Node.js", "Express", "Google Gemini AI", "OpenAI", "Buffer MCP", "Puppeteer", "Replicate", "MongoDB"],
+    keyFeatures: [
+      "Automated tech topic curation: continuous scanning of software engineering topics and industry news to inspire relevant content.",
+      "Multi-platform copy adaptations: generates punchy short-form posts for X/Twitter alongside detailed narrative insights for LinkedIn.",
+      "Buffer MCP direct queueing: dispatches approved content straight into scheduled publishing slots via standard MCP tool calls.",
+      "Visual synthesis: coordinates AI models for automated background removal and branded graphic creation.",
+    ],
+    gallery: [
+      { src: autopostingDashboard, alt: "AutoPostingEngine dashboard interface" },
+    ],
+  },
+
+  // ==================== FULL-STACK & RETAIL ====================
+  {
+    id: "trendsstore",
+    title: "TrendsStore E-Commerce Platform",
     category: "fullstack",
     shortDescription:
-      "A custom e-commerce store built from scratch for a hijab brand.",
-    githubUrl: "https://github.com/ahmedjavedcodes/hijab-store",
-    role: "Web Developer",
-    featured: false,
-    techStack: ["PHP", "WordPress", "HTML5 / CSS3", "JavaScript"],
+      "Production-grade MERN e-commerce application featuring a customer storefront, product catalog, cart, multi-step checkout, and comprehensive merchant back-office management portal.",
+    githubUrl: "https://github.com/hashirfarooq0023",
+    role: "Full-Stack Developer (NAVTTC Capstone)",
+    featured: true,
+    techStack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Auth"],
     keyFeatures: [
-      "Custom shop layouts: catalog pages, product bundles, cart and checkout.",
-      "Hand-tuned styling: custom PHP and HTML for an interactive storefront.",
+      "Responsive customer storefront: fast-loading catalog browsing with category filtering, featured carousels, and detailed product views.",
+      "Persistent cart & multi-step checkout: local storage cart synchronization with address validation and Cash-on-Delivery payment selection.",
+      "Admin product management (CRUD): merchant dashboard to add new items, modify pricing, update stock quantities, and manage featured banners.",
+      "Order tracking & fulfillment: administrative pipeline to view incoming orders, inspect customer shipping details, and update dispatch status.",
+      "Customer records database: secure customer registration, order histories, and merchant analytics on top-selling items.",
     ],
     gallery: [
-      { src: hijabHome, alt: "Hijab Gallery home page with a campaign banner and models" },
-      { src: hijabCatalog, alt: "Hijabs catalog with fabric filters and price range" },
-      { src: hijabProduct, alt: "Single product page for a black georgette hijab" },
-      { src: hijabCart, alt: "Shopping cart with order summary" },
+      { src: trendsMain, alt: "TrendsStore customer e-commerce storefront" },
+      { src: trendsAdmin, alt: "TrendsStore merchant administration panel" },
+      { src: trendsProduct, alt: "TrendsStore detailed product page" },
+      { src: trendsCheckout, alt: "TrendsStore multi-step checkout page" },
+    ],
+  },
+  {
+    id: "megatrix-portal",
+    title: "MegaTrix Core Portal",
+    category: "fullstack",
+    shortDescription:
+      "The central enterprise portal for the MegaTrix software ecosystem (megatrixai.com), built with TanStack Start, TanStack Router, Supabase real-time database, and dynamic analytics.",
+    liveUrl: "https://megatrixai.com",
+    githubUrl: "https://github.com/MegaTrix-Technologies/MegaTrix-General",
+    role: "Founder & Lead Architect",
+    featured: true,
+    techStack: ["TanStack Start", "TanStack Router", "Supabase", "TypeScript", "Tailwind CSS", "Recharts", "Radix UI"],
+    keyFeatures: [
+      "Modern architecture: TanStack Start and TanStack Router provide end-to-end type safety and rapid SSR rendering.",
+      "Real-time database: Supabase PostgreSQL backend with row-level security policies and real-time event subscriptions.",
+      "Retro-gaming aesthetic: bespoke pixel-dot styling, glowing neon accents, and scanline overlays creating a memorable brand presence.",
+      "Performance metrics: interactive charts and operational KPIs built with Recharts.",
     ],
   },
 ];

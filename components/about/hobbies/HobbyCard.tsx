@@ -9,6 +9,18 @@ interface HobbyCardProps {
 }
 
 const variants = {
+  gaming: {
+    Art: ReticleArt,
+    card: "border-chalk/10 bg-ink text-chalk hover:shadow-ink/30",
+    frame: "bg-chalk/[0.03] ring-chalk/10",
+    num: "text-chalk/35 group-hover/hobby:text-volt",
+  },
+  chess: {
+    Art: CueShotArt,
+    card: "border-ink/10 bg-paper text-ink hover:shadow-ink/10",
+    frame: "bg-fog/60 ring-ink/5",
+    num: "text-contour group-hover/hobby:text-ink",
+  },
   pubg: {
     Art: ReticleArt,
     card: "border-chalk/10 bg-ink text-chalk hover:shadow-ink/30",

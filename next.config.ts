@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["motion", "simple-icons"],
+    agentUpgrade: "security",
   },
   turbopack: {
     rules: {
