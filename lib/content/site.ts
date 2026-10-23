@@ -8,7 +8,7 @@ import type {
   SiteContent,
 } from "./types";
 import { aboutContent } from "./about";
-import portrait from "./images/hashir-glasses.png";
+import portrait from "./images/hashir-glasses.webp";
 import certAiForEveryone from "./images/certificates/ai-for-everyone.png";
 import certGitAndGithub from "./images/certificates/git-and-github.png";
 import certUcpVolunteer from "./images/linkedin-ucp-volunteer.jpg";

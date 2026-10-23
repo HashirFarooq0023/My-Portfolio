@@ -12,7 +12,8 @@ export function HeroPortrait() {
           alt={hero.portrait.alt}
           fill
           priority
-          sizes="(min-width: 1024px) 55vw, 95vw"
+          fetchPriority="high"
+          sizes="(min-width: 1024px) 38vw, 75vw"
           className="object-contain object-bottom drop-shadow-2xl"
         />
       </div>
