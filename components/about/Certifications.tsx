@@ -8,10 +8,20 @@ import type { CertificationItem } from "@/lib/content/types";
 import { BentoTile } from "@/components/ui/BentoTile";
 import { Icon } from "@/components/ui/Icon";
 import { TechLabel } from "@/components/ui/TechLabel";
+import { cn } from "@/lib/cn";
 import { Kicker } from "./Kicker";
+
+const tabs = [
+  { id: "all", label: "All Credentials" },
+  { id: "technical", label: "Technical & AI" },
+  { id: "extracurricular", label: "Leadership & Honors" },
+] as const;
+
+type FilterTab = (typeof tabs)[number]["id"];
 
 export function Certifications() {
   const [selected, setSelected] = useState<CertificationItem | null>(null);
+  const [activeTab, setActiveTab] = useState<FilterTab>("all");
 
   const handleClose = useCallback(() => setSelected(null), []);
 
@@ -23,23 +33,59 @@ export function Certifications() {
     return () => window.removeEventListener("keydown", onKey);
   }, [handleClose]);
 
+  const allItems = a.certifications as readonly CertificationItem[];
+  const filtered = activeTab === "all"
+    ? allItems
+    : allItems.filter((c) => (c.category ?? "technical") === activeTab);
+
   return (
     <>
       <BentoTile className="p-5 sm:p-6 md:p-8">
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-1">
             <Kicker>{a.certificationsKicker}</Kicker>
             <h3 className="text-xl font-bold tracking-tight md:text-2xl">{a.certificationsTitle}</h3>
+            <p className="text-sm text-graphite">{a.certificationsHint}</p>
           </div>
-          <p className="text-sm text-graphite">{a.certificationsHint}</p>
+
+          {/* Filter Pills */}
+          <div className="inline-flex max-w-full gap-1 overflow-x-auto rounded-full border border-ink/10 bg-paper/80 p-1 shadow-sm sm:self-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTab(tab.id)}
+                  className={cn(
+                    "relative shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:px-3.5 sm:py-1.5",
+                    isActive ? "text-chalk" : "text-graphite hover:text-ink",
+                  )}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="cert-filter-pill"
+                      className="absolute inset-0 rounded-full bg-ink"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-          {a.certifications.map((item) => {
-            const c = item as CertificationItem;
-            return (
-              <div
+        <motion.div layout className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((c) => (
+              <motion.div
                 key={c.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
                 className="group/cert relative flex flex-col justify-between overflow-hidden rounded-panel border border-ink/10 bg-chalk/60 p-4 transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1 hover:border-ink hover:bg-paper sm:p-5"
               >
                 <div>
@@ -101,10 +147,10 @@ export function Certifications() {
                     </a>
                   )}
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </BentoTile>
 
       <AnimatePresence>

@@ -51,6 +51,7 @@ export interface CertificationItem {
   skills: readonly string[];
   credentialUrl?: string;
   image?: ImageAsset;
+  category?: "technical" | "extracurricular";
 }
 
 export interface OffClockItem { id: "gaming" | "chess" | "pubg" | "snooker"; label: string }

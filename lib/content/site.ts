@@ -11,6 +11,7 @@ import { aboutContent } from "./about";
 import portrait from "./images/hashir-glasses.webp";
 import certAiForEveryone from "./images/certificates/ai-for-everyone.png";
 import certGitAndGithub from "./images/certificates/git-and-github.png";
+import certDeeplearningRag from "./images/cert-deeplearning-rag.webp";
 import certUcpVolunteer from "./images/linkedin-ucp-volunteer.jpg";
 import certLhcba from "./images/certificates/lhcba-it-coordinator.jpg";
 import certLoopverseCert from "./images/certificates/loopverse-certificate.jpg";
@@ -115,15 +116,16 @@ export const aboutSection = {
   closeModalLabel: "Close certificate preview",
   certifications: [
     {
-      id: "loopverse-ai-ml-award",
-      title: "2nd Runner-Up in AI/ML — LoopVerse 3.0",
-      issuer: "NASTP Lahore · LoopLab & TezHost",
-      date: "2026",
+      id: "deeplearning-rag",
+      title: "Retrieval Augmented Generation (RAG)",
+      issuer: "DeepLearning.AI / Coursera",
+      date: "24-Oct-2026",
       detail:
-        "Secured 2nd Runner-Up position at National Aerospace Science & Technology Park (NASTP) Lahore for building an AI Weather Prediction solution utilizing Machine Learning, RAG, and LLMs.",
-      skills: ["Machine Learning", "RAG", "LLMs", "Weather Prediction", "AI Systems"],
-      credentialUrl: "https://lnkd.in/p/dUV5Zch3",
-      image: { src: certLoopverseCert, alt: "LoopLab LoopVerse 3.0 Certificate of Participation awarded to Hashir Farooq" },
+        "Comprehensive hands-on training in Retrieval-Augmented Generation architectures, vector databases, dense semantic retrieval, context reranking, and grounding LLM responses with real-time enterprise knowledge bases.",
+      skills: ["RAG", "LLMs", "Vector Search", "Information Retrieval", "Semantic Search", "Prompt Engineering"],
+      credentialUrl: "https://coursera.org/verify/PAY5QPEUMIY6",
+      image: { src: certDeeplearningRag, alt: "Retrieval Augmented Generation (RAG) DeepLearning.AI Course Certificate awarded to Hashir Farooq" },
+      category: "technical",
     },
     {
       id: "ai-for-everyone",
@@ -135,6 +137,7 @@ export const aboutSection = {
       skills: ["AI Foundations", "Machine Learning", "Deep Learning", "AI Strategy"],
       credentialUrl: "https://coursera.org/verify/IL1T9CUOIA55",
       image: { src: certAiForEveryone, alt: "AI For Everyone DeepLearning.AI Certificate" },
+      category: "technical",
     },
     {
       id: "git-and-github",
@@ -146,6 +149,30 @@ export const aboutSection = {
       skills: ["Git", "GitHub", "Version Control", "Collaboration", "CI/CD"],
       credentialUrl: "https://coursera.org/verify/64Z4KP6LZOF4",
       image: { src: certGitAndGithub, alt: "Introduction to Git and GitHub Google Certificate" },
+      category: "technical",
+    },
+    {
+      id: "navttc-mern",
+      title: "MERN Stack Web Development",
+      issuer: "NAVTTC",
+      date: "Nov 2025 – Jan 2026",
+      detail:
+        "Intensive full-stack development credential covering production MERN applications, RESTful API design, database schemas, and JWT security.",
+      skills: ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "JWT"],
+      credentialUrl: "https://github.com/hashirfarooq0023",
+      category: "technical",
+    },
+    {
+      id: "loopverse-ai-ml-award",
+      title: "2nd Runner-Up in AI/ML — LoopVerse 3.0",
+      issuer: "NASTP Lahore · LoopLab & TezHost",
+      date: "2026",
+      detail:
+        "Secured 2nd Runner-Up position at National Aerospace Science & Technology Park (NASTP) Lahore for building an AI Weather Prediction solution utilizing Machine Learning, RAG, and LLMs.",
+      skills: ["Machine Learning", "RAG", "LLMs", "Weather Prediction", "AI Systems"],
+      credentialUrl: "https://lnkd.in/p/dUV5Zch3",
+      image: { src: certLoopverseCert, alt: "LoopLab LoopVerse 3.0 Certificate of Participation awarded to Hashir Farooq" },
+      category: "extracurricular",
     },
     {
       id: "lhcba-biometric-elections",
@@ -156,6 +183,7 @@ export const aboutSection = {
         "Served with distinction as IT Coordinator for the LHCBA Annual Biometric Elections (2026-2027) following specialized technical training in biometric voter verification systems.",
       skills: ["Biometric Verification", "IT Coordination", "Election Tech", "Infrastructure Support"],
       image: { src: certLhcba, alt: "Certificate of Completion and Appreciation awarded to Hashir Farooq by Election Board Lahore High Court Bar Association" },
+      category: "extracurricular",
     },
     {
       id: "ucp-fyp-volunteer",
@@ -167,16 +195,7 @@ export const aboutSection = {
       skills: ["Event Organization", "Department Leadership", "Volunteer Support", "FOIT & CS"],
       credentialUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7436066341008334848/",
       image: { src: certUcpVolunteer, alt: "Certificate of Appreciation awarded to Hashir Farooq at UCP FOIT&CS FYP Open House Fall 2025" },
-    },
-    {
-      id: "navttc-mern",
-      title: "MERN Stack Web Development",
-      issuer: "NAVTTC",
-      date: "Nov 2025 – Jan 2026",
-      detail:
-        "Intensive full-stack development credential covering production MERN applications, RESTful API design, database schemas, and JWT security.",
-      skills: ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "JWT"],
-      credentialUrl: "https://github.com/hashirfarooq0023",
+      category: "extracurricular",
     },
   ],
   offClockTitle: "Off the clock",
