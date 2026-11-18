@@ -17,7 +17,7 @@ export function RuleLine({ className }: RuleLineProps) {
       className={cn("block h-px origin-left bg-current opacity-20", className)}
       initial={{ scaleX: reduce ? 1 : 0 }}
       whileInView={{ scaleX: 1 }}
-      viewport={{ once: true, amount: 1 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 1.2, ease: ease.snap }}
     />
   );

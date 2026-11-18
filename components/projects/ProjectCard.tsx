@@ -83,7 +83,7 @@ export const ProjectCard = forwardRef<HTMLElement, ProjectCardProps>(function Pr
       initial={{ opacity: 0, y: reduce ? 0 : 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.8, ease: ease.snap, delay: (index % 3) * 0.08 }}
       className={cn(
         "@container group relative isolate overflow-hidden rounded-card border border-contour bg-paper",

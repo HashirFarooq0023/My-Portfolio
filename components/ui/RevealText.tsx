@@ -49,7 +49,7 @@ export function RevealText({ text, className, delay = 0, onLoad = false, stagger
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: "some" }}
       >
         {words.map((word, w) => (
           <span key={`${word}-${w}`} className="-mb-[0.12em] inline-flex overflow-hidden pb-[0.12em] whitespace-nowrap">

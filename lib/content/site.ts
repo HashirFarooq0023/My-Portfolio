@@ -15,6 +15,7 @@ import certDeeplearningRag from "./images/cert-deeplearning-rag.webp";
 import certUcpVolunteer from "./images/linkedin-ucp-volunteer.jpg";
 import certLhcba from "./images/certificates/lhcba-it-coordinator.jpg";
 import certLoopverseCert from "./images/certificates/loopverse-certificate.jpg";
+import certNavttcMern from "./images/certificates/navttc-mern.jpg";
 
 export const site = {
   lang: "en",
@@ -160,6 +161,7 @@ export const aboutSection = {
         "Intensive full-stack development credential covering production MERN applications, RESTful API design, database schemas, and JWT security.",
       skills: ["MongoDB", "Express.js", "React", "Node.js", "REST APIs", "JWT"],
       credentialUrl: "https://github.com/hashirfarooq0023",
+      image: { src: certNavttcMern, alt: "NAVTTC JavaScript Fullstack (MEAN/MERN) Certificate awarded to Hashir Farooq" },
       category: "technical",
     },
     {

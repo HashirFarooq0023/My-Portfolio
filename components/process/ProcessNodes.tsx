@@ -21,7 +21,7 @@ export function ProcessNodes() {
     <motion.ol
       className="relative grid gap-y-10 lg:grid-cols-4"
       onViewportEnter={() => setInView(true)}
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: "some" }}
       onMouseLeave={() => setActive(last)}
     >
       {/* rail: horizontal on desktop, vertical on mobile */}
@@ -67,7 +67,7 @@ export function ProcessNodes() {
             className="group relative flex gap-4 sm:gap-6 outline-none lg:flex-col lg:items-center lg:gap-8 lg:px-3 lg:text-center"
             initial={{ opacity: 0, y: reduce ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: "some" }}
             transition={{ duration: 0.8, ease: ease.snap, delay: i * 0.12 }}
           >
             <span

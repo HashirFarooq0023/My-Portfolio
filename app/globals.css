@@ -64,8 +64,13 @@
 html {
   background: var(--color-chalk);
   color: var(--color-ink);
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+}
+
+body {
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -33,7 +33,7 @@ export function Reveal({ children, className, delay = 0, y = 32, onLoad = false 
       className={className}
       initial={{ opacity: 0, y: reduce ? 0 : y }}
       whileInView={shown}
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: "some" }}
     >
       {children}
     </motion.div>
